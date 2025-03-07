@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     let sections = document.querySelectorAll("section");
+    let navLinks = document.querySelectorAll("nav ul li");
     let currentSection = 0;
     let isScrolling = false;
 
@@ -17,8 +18,13 @@ document.addEventListener("DOMContentLoaded", function () {
             section.style.justifyContent = "center";
             section.style.alignItems = "center";
         });
+        
+        navLinks.forEach((link, i) => {
+            link.classList.toggle("active", i === index);
+        });
+
         isScrolling = true;
-        setTimeout(() => { isScrolling = false; }, 1500);
+        setTimeout(() => { isScrolling = false; }, 1200);
     }
 
     window.addEventListener("wheel", (event) => {
