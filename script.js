@@ -1,23 +1,29 @@
 document.addEventListener("DOMContentLoaded", function () {
-    let slides = document.querySelectorAll(".project-slide");
-    let currentSlide = 0;
+    let sections = document.querySelectorAll("section");
+    let currentSection = 0;
 
-    function showSlide(index) {
-        slides.forEach((slide, i) => {
-            slide.style.transform = `translateY(${(i - index) * 100}vh)`;
+    function showSection(index) {
+        sections.forEach((section, i) => {
+            section.style.transition = "opacity 1s ease-in-out";
+            section.style.opacity = i === index ? "1" : "0";
+            section.style.position = i === index ? "relative" : "absolute";
+            section.style.top = "0";
+            section.style.left = "0";
+            section.style.width = "100%";
+            section.style.height = "100vh";
         });
     }
 
     window.addEventListener("wheel", (event) => {
         if (event.deltaY > 0) {
-            currentSlide = Math.min(currentSlide + 1, slides.length - 1);
+            currentSection = Math.min(currentSection + 1, sections.length - 1);
         } else {
-            currentSlide = Math.max(currentSlide - 1, 0);
+            currentSection = Math.max(currentSection - 1, 0);
         }
-        showSlide(currentSlide);
+        showSection(currentSection);
     });
 
-    showSlide(currentSlide);
+    showSection(currentSection);
 
     // Мобильное меню
     const menuToggle = document.querySelector(".menu-toggle");
