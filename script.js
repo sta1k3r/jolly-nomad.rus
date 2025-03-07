@@ -5,9 +5,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function showSection(index) {
         sections.forEach((section, i) => {
-            section.style.transition = "transform 1s ease-in-out, opacity 1s ease-in-out";
+            section.style.transition = "opacity 1s ease-in-out";
             section.style.opacity = i === index ? "1" : "0";
-            section.style.transform = `translateY(${(i - index) * 100}vh)`;
             section.style.position = "absolute";
             section.style.top = "0";
             section.style.left = "0";
