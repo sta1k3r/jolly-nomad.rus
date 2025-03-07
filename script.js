@@ -19,6 +19,8 @@ document.addEventListener("DOMContentLoaded", function () {
             section.style.alignItems = "center";
         });
         
+        document.body.classList.toggle("section-active", index !== 0);
+
         navLinks.forEach((link, i) => {
             link.classList.toggle("active", i === index);
         });
