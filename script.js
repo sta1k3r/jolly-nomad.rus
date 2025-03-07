@@ -8,12 +8,12 @@ document.addEventListener("DOMContentLoaded", function () {
             section.style.transition = "opacity 1s ease-in-out, visibility 1s ease-in-out";
             section.style.opacity = i === index ? "1" : "0";
             section.style.visibility = i === index ? "visible" : "hidden";
-            section.style.position = "absolute";
+            section.style.position = i === index ? "absolute" : "fixed";
             section.style.top = "0";
             section.style.left = "0";
             section.style.width = "100vw";
             section.style.height = "100vh";
-            section.style.display = "flex";
+            section.style.display = i === index ? "flex" : "none";
             section.style.justifyContent = "center";
             section.style.alignItems = "center";
         });
