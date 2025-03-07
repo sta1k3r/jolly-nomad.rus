@@ -59,6 +59,24 @@ section {
     align-items: center;
     flex-direction: column;
     height: 100vh;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+}
+
+/* Делаем первую секцию видимой */
+section:first-of-type {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Показываем активную секцию */
+section.active {
+    opacity: 1;
+    visibility: visible;
 }
 
 /* Проекты */
@@ -97,9 +115,9 @@ html, body {
     height: 100%;
 }
 
-/* Возвращение блоков "Обо мне" и "Партнерство" */
-#about, #partnership {
-    display: flex;
+/* Исправляем стили для "Обо мне", "Партнёрство" и "Контакты" */
+#about, #partnership, #contacts {
+    display: flex !important;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -112,3 +130,5 @@ html, body {
     font-size: 32px;
     margin-bottom: 10px;
 }
+
+
