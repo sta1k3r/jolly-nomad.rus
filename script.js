@@ -28,11 +28,12 @@ document.addEventListener("DOMContentLoaded", function () {
             // Если это приветственная страница, показываем все кнопки
             navLinks.forEach((link) => link.style.display = "block");
         } else if (index > 0 && index <= 5) {
-            // Если это проекты, показываем только кнопку "Проекты"
+            // Если это проекты, показываем кнопку "Проекты"
             document.querySelector("nav ul li.projects").style.display = "block";
         } else {
             // Для остальных страниц показываем соответствующую кнопку
-            navLinks[index].style.display = "block";
+            let activeLink = document.querySelector(`nav ul li[data-section='${index}']`);
+            if (activeLink) activeLink.style.display = "block";
         }
 
         navLinks.forEach((link, i) => {
