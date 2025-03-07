@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     let sections = document.querySelectorAll("section");
     let currentSection = 0;
+    let isScrolling = false;
 
     function showSection(index) {
         sections.forEach((section, i) => {
@@ -12,9 +13,12 @@ document.addEventListener("DOMContentLoaded", function () {
             section.style.width = "100%";
             section.style.height = "100vh";
         });
+        isScrolling = true;
+        setTimeout(() => { isScrolling = false; }, 1200); // Защита от быстрого скролла
     }
 
     window.addEventListener("wheel", (event) => {
+        if (isScrolling) return;
         if (event.deltaY > 0) {
             currentSection = Math.min(currentSection + 1, sections.length - 1);
         } else {
