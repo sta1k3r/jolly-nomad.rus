@@ -43,4 +43,21 @@ document.addEventListener("DOMContentLoaded", function () {
     menuToggle.addEventListener("click", function () {
         navMenu.classList.toggle("mobile-visible");
     });
+
+    // Добавляем иконку скролла
+    let scrollIndicator = document.createElement("div");
+    scrollIndicator.innerHTML = "\u2193"; // Стрелка вниз
+    scrollIndicator.style.position = "absolute";
+    scrollIndicator.style.bottom = "20px";
+    scrollIndicator.style.left = "50%";
+    scrollIndicator.style.transform = "translateX(-50%)";
+    scrollIndicator.style.fontSize = "24px";
+    scrollIndicator.style.color = "white";
+    scrollIndicator.style.animation = "bounce 1.5s infinite";
+
+    document.querySelector("#welcome").appendChild(scrollIndicator);
+
+    let style = document.createElement("style");
+    style.innerHTML = "@keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }";
+    document.head.appendChild(style);
 });
