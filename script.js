@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
             section.style.transition = "opacity 1s ease-in-out, visibility 1s ease-in-out";
             section.style.opacity = i === index ? "1" : "0";
             section.style.visibility = i === index ? "visible" : "hidden";
-            section.style.position = i === index ? "absolute" : "fixed";
+            section.style.position = "absolute";
             section.style.top = "0";
             section.style.left = "0";
             section.style.width = "100vw";
@@ -44,18 +44,27 @@ document.addEventListener("DOMContentLoaded", function () {
         navMenu.classList.toggle("mobile-visible");
     });
 
-    // Добавляем иконку скролла
+    // Улучшенная стрелка вниз
     let scrollIndicator = document.createElement("div");
-    scrollIndicator.innerHTML = "\u2193"; // Стрелка вниз
-    scrollIndicator.style.position = "absolute";
-    scrollIndicator.style.bottom = "20px";
+    scrollIndicator.innerHTML = "&#9660;"; // Символ стрелки вниз
+    scrollIndicator.style.position = "fixed";
+    scrollIndicator.style.bottom = "50px";
     scrollIndicator.style.left = "50%";
     scrollIndicator.style.transform = "translateX(-50%)";
-    scrollIndicator.style.fontSize = "24px";
+    scrollIndicator.style.fontSize = "32px";
     scrollIndicator.style.color = "white";
+    scrollIndicator.style.opacity = "0.8";
     scrollIndicator.style.animation = "bounce 1.5s infinite";
+    scrollIndicator.style.cursor = "pointer";
 
-    document.querySelector("#welcome").appendChild(scrollIndicator);
+    scrollIndicator.addEventListener("click", () => {
+        if (currentSection < sections.length - 1) {
+            currentSection++;
+            showSection(currentSection);
+        }
+    });
+
+    document.body.appendChild(scrollIndicator);
 
     let style = document.createElement("style");
     style.innerHTML = "@keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }";
