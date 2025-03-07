@@ -1,34 +1,13 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
     const sections = document.querySelectorAll(".section");
 
-    function revealSections() {
-        sections.forEach(section => {
-            const rect = section.getBoundingClientRect();
-            if (rect.top < window.innerHeight * 0.75) {
-                section.classList.add("visible");
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
             }
         });
-    }
+    }, { threshold: 0.2 });
 
-    window.addEventListener("scroll", revealSections);
-    revealSections();
+    sections.forEach(section => observer.observe(section));
 });
-
-function scrollToSection(id) {
-    document.getElementById(id).scrollIntoView({ behavior: "smooth" });
-}
-
-/* Анимация появления текста */
-const fadeElements = document.querySelectorAll(".fade-in");
-
-function showFadeElements() {
-    fadeElements.forEach(element => {
-        const rect = element.getBoundingClientRect();
-        if (rect.top < window.innerHeight * 0.8) {
-            element.classList.add("visible");
-        }
-    });
-}
-
-window.addEventListener("scroll", showFadeElements);
-window.addEventListener("load", showFadeElements);
