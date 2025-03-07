@@ -2,13 +2,14 @@
 body {
     margin: 0;
     padding: 0;
-    background: #0c0c0c;
+    background: linear-gradient(45deg, #0c0c0c, #1a1a1a);
     color: white;
     font-family: 'Arial', sans-serif;
     overflow-x: hidden;
+    transition: background 0.5s ease-in-out;
 }
 
-/* Контейнер для плавной прокрутки */
+/* Контейнер с плавной прокруткой */
 .container {
     scroll-snap-type: y mandatory;
     overflow-y: scroll;
@@ -29,15 +30,22 @@ body {
     transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
-/* При загрузке */
-.section.visible {
+/* Анимация появления */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.visible {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* Стили заголовков */
+/* Заголовки */
 h1 {
     font-size: 3rem;
+    text-transform: uppercase;
 }
 
 h2 {
@@ -60,10 +68,12 @@ button {
     color: black;
     cursor: pointer;
     transition: 0.3s;
+    border-radius: 5px;
 }
 
 button:hover {
     background: white;
+    transform: scale(1.05);
 }
 
 /* Карточки проектов */
