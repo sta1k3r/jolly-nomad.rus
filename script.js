@@ -10,9 +10,9 @@ document.addEventListener("DOMContentLoaded", function () {
             section.style.position = "absolute";
             section.style.top = "0";
             section.style.left = "0";
-            section.style.width = "100%";
+            section.style.width = "100vw";
             section.style.height = "100vh";
-            section.style.display = "flex";
+            section.style.display = i === index ? "flex" : "none";
             section.style.justifyContent = "center";
             section.style.alignItems = "center";
         });
@@ -31,6 +31,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     showSection(currentSection);
+
+    // Убираем скролл
+    document.body.style.overflow = "hidden";
 
     // Мобильное меню
     const menuToggle = document.querySelector(".menu-toggle");
