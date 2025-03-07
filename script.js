@@ -90,4 +90,17 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     });
+
+    // Исправление: Добавляем поддержку кнопки "Проекты"
+    let projectsButton = document.querySelector("nav ul li.projects a");
+    if (projectsButton) {
+        projectsButton.addEventListener("click", (event) => {
+            event.preventDefault();
+            let projectsIndex = sectionIds.indexOf("projects");
+            if (projectsIndex !== -1) {
+                currentSection = projectsIndex;
+                showSection(currentSection);
+            }
+        });
+    }
 });
