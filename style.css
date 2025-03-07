@@ -1,98 +1,99 @@
-/* Общие стили */
-* {
+/* Общий стиль */
+body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
-body {
-    overflow: hidden;
-    background: #111;
+    background: #0c0c0c;
     color: white;
+    font-family: 'Arial', sans-serif;
+    overflow-x: hidden;
 }
 
+/* Контейнер для плавной прокрутки */
 .container {
-    height: 100vh;
-    width: 100vw;
     scroll-snap-type: y mandatory;
     overflow-y: scroll;
+    height: 100vh;
 }
 
+/* Общий стиль секций */
 .section {
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
     flex-direction: column;
     scroll-snap-align: start;
-    text-align: center;
-    padding: 40px;
     opacity: 0;
     transform: translateY(50px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    will-change: opacity, transform;
+    transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
-.section.active {
+/* При загрузке */
+.section.visible {
     opacity: 1;
     transform: translateY(0);
 }
 
-h1, h2 {
-    margin-bottom: 10px;
-    color: #00c3ff;
+/* Стили заголовков */
+h1 {
+    font-size: 3rem;
 }
 
-p {
-    font-size: 18px;
-    opacity: 0.8;
-    max-width: 800px;
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
 }
 
-img {
-    max-width: 80%;
-    height: auto;
-    margin-top: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+/* Подсветка */
+.highlight {
+    color: cyan;
 }
 
+/* Кнопка */
 button {
-    background: #00c3ff;
-    color: white;
-    padding: 15px 25px;
-    border: none;
-    border-radius: 5px;
     margin-top: 20px;
-    font-size: 18px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    background: cyan;
+    color: black;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: 0.3s;
 }
 
 button:hover {
-    background: #008bb5;
+    background: white;
 }
 
-ul {
-    list-style: none;
-    padding: 0;
-    margin-top: 10px;
+/* Карточки проектов */
+.project-card {
+    display: flex;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 800px;
+    transition: 0.3s;
 }
 
-ul li {
-    font-size: 18px;
-    margin-bottom: 8px;
+.project-card:hover {
+    background: rgba(255, 255, 255, 0.2);
 }
 
-/* Анимация появления */
-.section {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 1s ease, transform 1s ease;
+.project-card img {
+    width: 150px;
+    height: auto;
+    border-radius: 10px;
+    margin-right: 20px;
 }
 
-.section.active {
-    opacity: 1;
-    transform: translateY(0);
+.project-info {
+    text-align: left;
+}
+
+/* Контакты */
+.contact p {
+    font-size: 1.2rem;
 }
