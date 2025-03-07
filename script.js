@@ -21,8 +21,22 @@ document.addEventListener("DOMContentLoaded", function () {
         
         document.body.classList.toggle("section-active", index !== 0);
 
+        // Логика отображения кнопок
+        navLinks.forEach((link) => link.style.display = "none"); // Скрываем все кнопки
+
+        if (index === 0) {
+            // Если это приветственная страница, показываем все кнопки
+            navLinks.forEach((link) => link.style.display = "block");
+        } else if (index > 0 && index <= 5) {
+            // Если это проекты, показываем только кнопку "Проекты"
+            document.querySelector("nav ul li.projects").style.display = "block";
+        } else {
+            // Для остальных страниц показываем соответствующую кнопку
+            navLinks[index].style.display = "block";
+        }
+
         navLinks.forEach((link, i) => {
-            link.classList.toggle("active", i === index);
+            link.classList.toggle("active", i === index || (index > 0 && index <= 5 && link.classList.contains("projects")));
         });
 
         isScrolling = true;
