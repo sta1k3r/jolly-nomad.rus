@@ -23,18 +23,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
         document.body.classList.toggle("section-active", index !== 0);
 
-        // Показываем все кнопки навигации на главной
-        if (index === 0) {
-            navItems.forEach(item => item.style.display = "block");
-        } else {
-            navItems.forEach(item => item.style.display = "none");
+        navItems.forEach(item => item.style.display = "none");
 
-            let activeSection = sections[index].dataset.section;
-            let activeLink = document.querySelector(`nav ul li[data-section='${activeSection}']`);
-            if (activeLink) activeLink.style.display = "block";
-        }
+        let activeSection = sections[index].dataset.section;
+        let activeLink = document.querySelector(`nav ul li[data-section='${activeSection}']`);
+        if (activeLink) activeLink.style.display = "block";
 
-        // Обновление активной кнопки навигации
         navLinks.forEach(link => link.classList.remove("active"));
         let activeNav = document.querySelector(`nav ul li[data-section='${sections[index].dataset.section}'] a`);
         if (activeNav) activeNav.classList.add("active");
@@ -91,14 +85,14 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Исправление: Добавляем поддержку кнопки "Проекты"
+    // Исправление: Кнопка "Проекты"
     let projectsButton = document.querySelector("nav ul li.projects a");
     if (projectsButton) {
         projectsButton.addEventListener("click", (event) => {
             event.preventDefault();
-            let projectsIndex = sectionIds.indexOf("projects");
-            if (projectsIndex !== -1) {
-                currentSection = projectsIndex;
+            let firstProjectIndex = sectionIds.indexOf("projects");
+            if (firstProjectIndex !== -1) {
+                currentSection = firstProjectIndex;
                 showSection(currentSection);
             }
         });
