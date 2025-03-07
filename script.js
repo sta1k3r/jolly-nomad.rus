@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
             section.style.alignItems = "center";
         });
         isScrolling = true;
-        setTimeout(() => { isScrolling = false; }, 1200);
+        setTimeout(() => { isScrolling = false; }, 1500);
     }
 
     window.addEventListener("wheel", (event) => {
@@ -33,7 +33,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     showSection(currentSection);
 
-    // Стрелка
+    // Убираем скролл
+    document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
+
+    // Стрелка скролла
     let scrollIndicator = document.querySelector("#scroll-indicator");
     scrollIndicator.style.position = "absolute";
     scrollIndicator.style.bottom = "50px";
