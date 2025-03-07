@@ -28,6 +28,15 @@ body {
     scroll-snap-align: start;
     text-align: center;
     padding: 40px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    will-change: opacity, transform;
+}
+
+.section.active {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 h1, h2 {
