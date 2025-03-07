@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     let sections = document.querySelectorAll("section");
     let navLinks = document.querySelectorAll("nav ul li a");
+    let navItems = document.querySelectorAll("nav ul li");
     let currentSection = 0;
     let isScrolling = false;
 
@@ -21,16 +22,19 @@ document.addEventListener("DOMContentLoaded", function () {
         
         document.body.classList.toggle("section-active", index !== 0);
 
-        // Обновление навигации
-        navLinks.forEach((link) => link.parentElement.style.display = "none"); // Скрываем все кнопки
-
-        let activeSection = sections[index].dataset.section;
-
-        if (activeSection === "projects") {
-            document.querySelector("nav ul li.projects").style.display = "block";
+        // Показываем все кнопки на главной странице
+        if (index === 0) {
+            navItems.forEach((item) => item.style.display = "block");
         } else {
-            let activeLink = document.querySelector(`nav ul li[data-section='${activeSection}']`);
-            if (activeLink) activeLink.style.display = "block";
+            navItems.forEach((item) => item.style.display = "none");
+            
+            let activeSection = sections[index].dataset.section;
+            if (activeSection === "projects") {
+                document.querySelector("nav ul li.projects").style.display = "block";
+            } else {
+                let activeLink = document.querySelector(`nav ul li[data-section='${activeSection}']`);
+                if (activeLink) activeLink.style.display = "block";
+            }
         }
 
         navLinks.forEach((link) => link.classList.remove("active"));
