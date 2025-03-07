@@ -23,14 +23,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
         document.body.classList.toggle("section-active", index !== 0);
 
-        navItems.forEach(item => item.style.display = "none");
+        // Показываем все кнопки навигации на главной
+        if (index === 0) {
+            navItems.forEach(item => item.style.display = "block");
+        } else {
+            navItems.forEach(item => item.style.display = "none");
 
-        let activeSection = sections[index].dataset.section;
-        let activeLink = document.querySelector(`nav ul li[data-section='${activeSection}']`);
-        if (activeLink) activeLink.style.display = "block";
+            let activeSection = sections[index].dataset.section;
+            let activeLink = document.querySelector(`nav ul li[data-section='${activeSection}']`);
+            if (activeLink) activeLink.style.display = "block";
+        }
 
+        // Обновление активной кнопки навигации
         navLinks.forEach(link => link.classList.remove("active"));
-        let activeNav = document.querySelector(`nav ul li a[href='#${sections[index].id}']`);
+        let activeNav = document.querySelector(`nav ul li[data-section='${sections[index].dataset.section}'] a`);
         if (activeNav) activeNav.classList.add("active");
 
         isScrolling = true;
