@@ -5,13 +5,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function showSection(index) {
         sections.forEach((section, i) => {
-            section.style.transition = "opacity 1s ease-in-out";
+            section.style.transition = "transform 1s ease-in-out, opacity 1s ease-in-out";
             section.style.opacity = i === index ? "1" : "0";
-            section.style.position = i === index ? "relative" : "absolute";
+            section.style.transform = `translateY(${(i - index) * 100}vh)`;
+            section.style.position = "absolute";
             section.style.top = "0";
             section.style.left = "0";
             section.style.width = "100%";
             section.style.height = "100vh";
+            section.style.display = "flex";
+            section.style.justifyContent = "center";
+            section.style.alignItems = "center";
         });
         isScrolling = true;
         setTimeout(() => { isScrolling = false; }, 1200); // Защита от быстрого скролла
