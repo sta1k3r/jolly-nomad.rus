@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', function() {
             }});
     });
 
-    document.querySelector('.scroll-btn').addEventListener('click', function() {
-        gsap.to(window, {scrollTo: {y: '.projects', offsetY: 50}, duration: 1.2, ease: 'power2.out'});
+    document.querySelector('.discover-btn').addEventListener('click', function() {
+        gsap.to(window, {scrollTo: {y: '#projects', offsetY: 50}, duration: 1.2, ease: 'power2.out'});
     });
 
     ScrollTrigger.create({
