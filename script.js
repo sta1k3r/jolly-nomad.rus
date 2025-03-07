@@ -27,18 +27,16 @@ document.addEventListener("DOMContentLoaded", function () {
             navItems.forEach((item) => item.style.display = "block");
         } else {
             navItems.forEach((item) => item.style.display = "none");
-            
+
             let activeSection = sections[index].dataset.section;
-            if (activeSection === "projects") {
-                document.querySelector("nav ul li.projects").style.display = "block";
-            } else {
-                let activeLink = document.querySelector(`nav ul li[data-section='${activeSection}']`);
-                if (activeLink) activeLink.style.display = "block";
-            }
+            let activeLink = document.querySelector(`nav ul li[data-section='${activeSection}']`);
+            if (activeLink) activeLink.style.display = "block";
         }
 
         navLinks.forEach((link) => link.classList.remove("active"));
-        navLinks[index].classList.add("active");
+        if (navLinks[index]) {
+            navLinks[index].classList.add("active");
+        }
 
         isScrolling = true;
         setTimeout(() => { isScrolling = false; }, 1200);
