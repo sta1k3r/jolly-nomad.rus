@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let sections = document.querySelectorAll("section");
     let navLinks = document.querySelectorAll("nav ul li a");
     let navItems = document.querySelectorAll("nav ul li");
+    let sectionIds = Array.from(sections).map(sec => sec.id);
     let currentSection = 0;
     let isScrolling = false;
 
@@ -19,24 +20,18 @@ document.addEventListener("DOMContentLoaded", function () {
             section.style.justifyContent = "center";
             section.style.alignItems = "center";
         });
-        
+
         document.body.classList.toggle("section-active", index !== 0);
 
-        // Показываем все кнопки на главной странице
-        if (index === 0) {
-            navItems.forEach((item) => item.style.display = "block");
-        } else {
-            navItems.forEach((item) => item.style.display = "none");
+        navItems.forEach(item => item.style.display = "none");
 
-            let activeSection = sections[index].dataset.section;
-            let activeLink = document.querySelector(`nav ul li[data-section='${activeSection}']`);
-            if (activeLink) activeLink.style.display = "block";
-        }
+        let activeSection = sections[index].dataset.section;
+        let activeLink = document.querySelector(`nav ul li[data-section='${activeSection}']`);
+        if (activeLink) activeLink.style.display = "block";
 
-        navLinks.forEach((link) => link.classList.remove("active"));
-        if (navLinks[index]) {
-            navLinks[index].classList.add("active");
-        }
+        navLinks.forEach(link => link.classList.remove("active"));
+        let activeNav = document.querySelector(`nav ul li a[href='#${sections[index].id}']`);
+        if (activeNav) activeNav.classList.add("active");
 
         isScrolling = true;
         setTimeout(() => { isScrolling = false; }, 1200);
@@ -78,11 +73,15 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Навигация по клику на ссылки
-    document.querySelectorAll("nav ul li a").forEach((link, index) => {
+    document.querySelectorAll("nav ul li a").forEach(link => {
         link.addEventListener("click", (event) => {
             event.preventDefault();
-            currentSection = index;
-            showSection(currentSection);
+            let targetId = link.parentElement.dataset.section;
+            let targetIndex = sectionIds.indexOf(targetId);
+            if (targetIndex !== -1) {
+                currentSection = targetIndex;
+                showSection(currentSection);
+            }
         });
     });
 });
