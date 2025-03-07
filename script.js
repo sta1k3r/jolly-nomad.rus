@@ -13,12 +13,12 @@ document.addEventListener("DOMContentLoaded", function () {
             section.style.left = "0";
             section.style.width = "100vw";
             section.style.height = "100vh";
-            section.style.display = i === index ? "flex" : "none";
+            section.style.display = "flex";
             section.style.justifyContent = "center";
             section.style.alignItems = "center";
         });
         isScrolling = true;
-        setTimeout(() => { isScrolling = false; }, 1200); // Защита от быстрого скролла
+        setTimeout(() => { isScrolling = false; }, 1200);
     }
 
     window.addEventListener("wheel", (event) => {
@@ -33,21 +33,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     showSection(currentSection);
 
-    // Убираем скролл
-    document.body.style.overflow = "hidden";
-
-    // Мобильное меню
-    const menuToggle = document.querySelector(".menu-toggle");
-    const navMenu = document.querySelector("nav ul");
-
-    menuToggle.addEventListener("click", function () {
-        navMenu.classList.toggle("mobile-visible");
-    });
-
-    // Улучшенная стрелка вниз
-    let scrollIndicator = document.createElement("div");
-    scrollIndicator.innerHTML = "&#9660;"; // Символ стрелки вниз
-    scrollIndicator.style.position = "fixed";
+    // Стрелка
+    let scrollIndicator = document.querySelector("#scroll-indicator");
+    scrollIndicator.style.position = "absolute";
     scrollIndicator.style.bottom = "50px";
     scrollIndicator.style.left = "50%";
     scrollIndicator.style.transform = "translateX(-50%)";
@@ -63,10 +51,4 @@ document.addEventListener("DOMContentLoaded", function () {
             showSection(currentSection);
         }
     });
-
-    document.body.appendChild(scrollIndicator);
-
-    let style = document.createElement("style");
-    style.innerHTML = "@keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }";
-    document.head.appendChild(style);
 });
