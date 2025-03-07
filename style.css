@@ -23,11 +23,6 @@ nav ul {
 }
 
 nav ul li {
-    display: none;
-}
-
-nav ul li.projects,
-nav ul li.active {
     display: block;
 }
 
@@ -56,9 +51,44 @@ nav ul li a.active::after {
     transform: scaleX(1);
 }
 
-/* Анимация смены секций */
+/* Стили для страниц */
 section {
     transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Проекты */
+.project-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 80%;
+    text-align: left;
+    padding: 20px;
+}
+
+.project-container img {
+    width: 40%;
+    border-radius: 15px;
+}
+
+.project-container .text {
+    width: 50%;
+}
+
+.project-container h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.project-container p {
+    font-size: 18px;
+    text-align: left;
 }
 
 /* Убираем скролл */
@@ -67,43 +97,18 @@ html, body {
     height: 100%;
 }
 
-/* Центрирование секций */
-section {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
+/* Возвращение блоков "Обо мне" и "Партнерство" */
+#about, #partnership {
     display: flex;
     justify-content: center;
     align-items: center;
-    opacity: 0;
-    visibility: hidden;
+    height: 100vh;
+    flex-direction: column;
+    text-align: center;
 }
 
-section:first-of-type {
-    opacity: 1;
-    visibility: visible;
-}
-
-/* Стрелка скролла */
-#scroll-indicator {
-    position: absolute;
-    bottom: 50px;
-    left: 50%;
-    transform: translateX(-50%);
+/* Стили для заголовков */
+#about h2, #partnership h2, #contacts h2 {
     font-size: 32px;
-    color: white;
-    opacity: 0.8;
-    animation: bounce 1.5s infinite;
-    cursor: pointer;
-}
-
-@keyframes bounce {
-    0%, 100% {
-        transform: translateX(-50%) translateY(0);
-    }
-    50% {
-        transform: translateX(-50%) translateY(-10px);
-    }
+    margin-bottom: 10px;
 }
