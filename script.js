@@ -27,11 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (index === 0) {
             navItems.forEach(item => item.style.display = "block");
         } else {
-            if (index === 0) {
-        navItems.forEach(item => item.style.display = "block");
-    } else {
-        navItems.forEach(item => item.style.display = "none");
-    }
+            navItems.forEach(item => item.style.display = "none");
 
             let activeSection = sections[index].dataset.section;
             let activeLink = document.querySelector(`nav ul li[data-section='${activeSection}']`);
