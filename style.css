@@ -21,7 +21,6 @@ header {
 }
 
 /* Стили для минималистичной навигации */
-/* Стили для минималистичной навигации */
 nav {
     display: flex;
     justify-content: center;
@@ -68,12 +67,17 @@ nav ul li a:hover::after, nav ul li a.active::after {
     transform-origin: left;
 }
 
-/* Скрываем ненужные кнопки, кроме активной */
+/* По умолчанию показываем все кнопки */
 nav ul li {
+    display: block;
+}
+
+/* После перехода на другой блок, показываем только текущую кнопку */
+body.section-active nav ul li {
     display: none;
 }
 
-nav ul li.active {
+body.section-active nav ul li.active {
     display: block;
 }
 
