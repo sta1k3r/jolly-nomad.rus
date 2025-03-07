@@ -1,109 +1,88 @@
-/* Общий стиль */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
+
+:root {
+    --background: #0d0d0d;
+    --text: #ffffff;
+    --highlight: #00c3ff;
+    --gray: #888888;
+}
+
 body {
     margin: 0;
-    padding: 0;
-    background: linear-gradient(45deg, #0c0c0c, #1a1a1a);
-    color: white;
-    font-family: 'Arial', sans-serif;
-    overflow-x: hidden;
-    transition: background 0.5s ease-in-out;
+    font-family: 'Inter', sans-serif;
+    background: var(--background);
+    color: var(--text);
+    scroll-behavior: smooth;
 }
 
-/* Контейнер с плавной прокруткой */
-.container {
-    scroll-snap-type: y mandatory;
-    overflow-y: scroll;
-    height: 100vh;
-}
-
-/* Общий стиль секций */
 .section {
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
     flex-direction: column;
-    scroll-snap-align: start;
+    text-align: center;
     opacity: 0;
     transform: translateY(50px);
-    transition: opacity 1s ease-out, transform 1s ease-out;
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-/* Анимация появления */
-.fade-in {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 1s ease-out, transform 1s ease-out;
-}
-
-.fade-in.visible {
+.section.visible {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* Заголовки */
+.container {
+    max-width: 800px;
+    padding: 20px;
+}
+
 h1 {
     font-size: 3rem;
-    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.highlight {
+    color: var(--highlight);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--gray);
+}
+
+.scroll-down {
+    margin-top: 20px;
+    font-size: 1rem;
+    color: var(--highlight);
+    cursor: pointer;
 }
 
 h2 {
     font-size: 2.5rem;
-    margin-bottom: 20px;
 }
 
-/* Подсветка */
-.highlight {
-    color: cyan;
-}
-
-/* Кнопка */
-button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 1rem;
-    border: none;
-    background: cyan;
-    color: black;
-    cursor: pointer;
-    transition: 0.3s;
-    border-radius: 5px;
-}
-
-button:hover {
-    background: white;
-    transform: scale(1.05);
-}
-
-/* Карточки проектов */
-.project-card {
+.project {
     display: flex;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 20px;
-    margin: 20px;
-    border-radius: 10px;
-    width: 80%;
-    max-width: 800px;
-    transition: 0.3s;
+    align-items: center;
+    margin: 40px 0;
 }
 
-.project-card:hover {
-    background: rgba(255, 255, 255, 0.2);
-}
-
-.project-card img {
-    width: 150px;
-    height: auto;
+.project img {
+    width: 300px;
     border-radius: 10px;
-    margin-right: 20px;
 }
 
 .project-info {
-    text-align: left;
+    margin-left: 20px;
 }
 
-/* Контакты */
-.contact p {
-    font-size: 1.2rem;
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: var(--highlight);
+    color: var(--background);
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
 }
