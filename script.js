@@ -55,4 +55,13 @@ document.addEventListener("DOMContentLoaded", function () {
             showSection(currentSection);
         }
     });
+
+    // Навигация по клику на ссылки
+    document.querySelectorAll("nav ul li a").forEach((link, index) => {
+        link.addEventListener("click", (event) => {
+            event.preventDefault();
+            currentSection = index;
+            showSection(currentSection);
+        });
+    });
 });
