@@ -18,27 +18,20 @@ document.addEventListener("DOMContentLoaded", function () {
             section.style.justifyContent = "center";
             section.style.alignItems = "center";
         });
-        
+
         document.body.classList.toggle("section-active", index !== 0);
 
         // Логика отображения кнопок
         navLinks.forEach((link) => link.style.display = "none"); // Скрываем все кнопки
 
-        if (index === 0) {
-            // Если это приветственная страница, показываем все кнопки
-            navLinks.forEach((link) => link.style.display = "block");
-        } else if (index > 0 && index <= 5) {
-            // Если это проекты, показываем кнопку "Проекты"
+        let activeSection = sections[index].dataset.section;
+
+        if (activeSection === "projects") {
             document.querySelector("nav ul li.projects").style.display = "block";
         } else {
-            // Для остальных страниц показываем соответствующую кнопку
-            let activeLink = document.querySelector(`nav ul li[data-section='${index}']`);
+            let activeLink = document.querySelector(`nav ul li[data-section='${activeSection}']`);
             if (activeLink) activeLink.style.display = "block";
         }
-
-        navLinks.forEach((link, i) => {
-            link.classList.toggle("active", i === index || (index > 0 && index <= 5 && link.classList.contains("projects")));
-        });
 
         isScrolling = true;
         setTimeout(() => { isScrolling = false; }, 1200);
@@ -55,36 +48,4 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     showSection(currentSection);
-
-    // Убираем скролл
-    document.body.style.overflow = "hidden";
-    document.documentElement.style.overflow = "hidden";
-
-    // Стрелка скролла
-    let scrollIndicator = document.querySelector("#scroll-indicator");
-    scrollIndicator.style.position = "absolute";
-    scrollIndicator.style.bottom = "50px";
-    scrollIndicator.style.left = "50%";
-    scrollIndicator.style.transform = "translateX(-50%)";
-    scrollIndicator.style.fontSize = "32px";
-    scrollIndicator.style.color = "white";
-    scrollIndicator.style.opacity = "0.8";
-    scrollIndicator.style.animation = "bounce 1.5s infinite";
-    scrollIndicator.style.cursor = "pointer";
-
-    scrollIndicator.addEventListener("click", () => {
-        if (currentSection < sections.length - 1) {
-            currentSection++;
-            showSection(currentSection);
-        }
-    });
-
-    // Навигация по клику на ссылки
-    document.querySelectorAll("nav ul li a").forEach((link, index) => {
-        link.addEventListener("click", (event) => {
-            event.preventDefault();
-            currentSection = index;
-            showSection(currentSection);
-        });
-    });
 });
