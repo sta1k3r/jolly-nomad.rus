@@ -17,3 +17,18 @@ document.addEventListener("DOMContentLoaded", function () {
 function scrollToSection(id) {
     document.getElementById(id).scrollIntoView({ behavior: "smooth" });
 }
+
+/* Анимация появления текста */
+const fadeElements = document.querySelectorAll(".fade-in");
+
+function showFadeElements() {
+    fadeElements.forEach(element => {
+        const rect = element.getBoundingClientRect();
+        if (rect.top < window.innerHeight * 0.8) {
+            element.classList.add("visible");
+        }
+    });
+}
+
+window.addEventListener("scroll", showFadeElements);
+window.addEventListener("load", showFadeElements);
