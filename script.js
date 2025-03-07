@@ -90,10 +90,15 @@ document.addEventListener("DOMContentLoaded", function () {
     if (projectsButton) {
         projectsButton.addEventListener("click", (event) => {
             event.preventDefault();
-            let firstProjectIndex = sectionIds.indexOf("projects");
-            if (firstProjectIndex !== -1) {
-                currentSection = firstProjectIndex;
-                showSection(currentSection);
+
+            // Проверяем, есть ли несколько секций проектов
+            let projectSections = document.querySelectorAll("[data-section='projects']");
+            if (projectSections.length > 0) {
+                let firstProjectIndex = sectionIds.indexOf(projectSections[0].id);
+                if (firstProjectIndex !== -1) {
+                    currentSection = firstProjectIndex;
+                    showSection(currentSection);
+                }
             }
         });
     }
