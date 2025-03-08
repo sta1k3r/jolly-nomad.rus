@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
     let sections = document.querySelectorAll("section");
     let navLinks = document.querySelectorAll("nav ul li a");
-    let sectionIds = Array.from(sections).map(sec => sec.id);
     let projectSlides = document.querySelectorAll(".project-slide");
+    let sectionIds = Array.from(sections).map(sec => sec.id);
     let currentSection = 0;
     let currentProject = 0;
     let isScrolling = false;
@@ -84,7 +84,6 @@ document.addEventListener("DOMContentLoaded", function () {
     showSection(currentSection);
     showProject(0);
 });
-
 
     // Убираем скролл
     document.body.style.overflow = "hidden";
