@@ -27,25 +27,30 @@ nav ul li {
 }
 
 nav ul li a {
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 400;
-    color: white;
+    font-size: 16px; /* Сделал шрифт тоньше */
+    font-weight: 300; /* Уменьшил жирность */
+    text-transform: uppercase;
+    letter-spacing: 1px;
     position: relative;
-    padding-bottom: 5px;
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease-in-out;
 }
 
 nav ul li a::after {
     content: "";
-    display: block;
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: -3px;
     width: 100%;
-    height: 3px;
+    height: 2px;
     background: white;
     transform: scaleX(0);
     transition: transform 0.3s ease-in-out;
+}
+
+nav ul li a:hover::after {
+    transform: scaleX(1); /* Анимация заполнения полоски */
 }
 
 nav ul li a.active::after {
