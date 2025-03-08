@@ -416,36 +416,30 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 .profile-1 .profile-scroll-container {
   transform: translate3d(0, -20%, 0);
 }
+
 @media screen and (min-width: 600px) {
   .profile-1 .profile-scroll-container {
-    transform: translate3d(0, 0, 0);
+    transform: translate3d(0, -66vh, 0);
   }
 }
 
 .profile-2 .profile-scroll-container {
-  transform: translate3d(0, 0, 0);
+  transform: translate3d(0, -40%, 0);
 }
+
 @media screen and (min-width: 600px) {
   .profile-2 .profile-scroll-container {
-    transform: translate3d(0, 0, 0);
+    transform: translate3d(0, -132vh, 0);
   }
 }
 
 .profile-3 .profile-scroll-container {
-  transform: translate3d(0, 0, 0);
-}
-@media screen and (min-width: 600px) {
-  .profile-3 .profile-scroll-container {
-    transform: translate3d(0, 0, 0);
-  }
+  transform: translate3d(0, -60%, 0);
 }
 
-.profile-4 .profile-scroll-container {
-  transform: translate3d(0, 0, 0);
-}
 @media screen and (min-width: 600px) {
-  .profile-4 .profile-scroll-container {
-    transform: translate3d(0, 0, 0);
+  .profile-3 .profile-scroll-container {
+    transform: translate3d(0, -198vh, 0);
   }
 }
 
