@@ -24,7 +24,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         document.body.classList.toggle("section-active", index !== 0);
 
-     if (index === 0) {
+        // Показываем все кнопки навигации на главной
+        if (index === 0) {
             navItems.forEach(item => item.style.display = "block");
         } else {
             navItems.forEach(item => item.style.display = "none");
@@ -34,6 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (activeLink) activeLink.style.display = "block";
         }
 
+        // Обновление активной кнопки навигации
         navLinks.forEach(link => link.classList.remove("active"));
         let activeNav = document.querySelector(`nav ul li[data-section='${sections[index].dataset.section}'] a`);
         if (activeNav) activeNav.classList.add("active");
@@ -42,10 +44,10 @@ document.addEventListener("DOMContentLoaded", function () {
         setTimeout(() => { isScrolling = false; }, 1200);
     }
 
-    function showNextProject() {
+    function showProject(index) {
         projectSlides.forEach((slide, i) => {
-            slide.style.opacity = i === currentProject ? "1" : "0";
-            slide.style.visibility = i === currentProject ? "visible" : "hidden";
+            slide.style.opacity = i === index ? "1" : "0";
+            slide.style.visibility = i === index ? "visible" : "hidden";
         });
     }
 
@@ -58,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
             } else {
                 currentProject = Math.max(currentProject - 1, 0);
             }
-            showNextProject();
+            showProject(currentProject);
         } else {
             if (event.deltaY > 0) {
                 currentSection = Math.min(currentSection + 1, sections.length - 1);
@@ -69,71 +71,21 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    showSection(currentSection);
-    showNextProject();
-});
-
-    showSection(currentSection);
-
-    document.body.style.overflow = "hidden";
-    document.documentElement.style.overflow = "hidden";
-
-    let scrollIndicator = document.querySelector("#scroll-indicator");
-    scrollIndicator.style.position = "absolute";
-    scrollIndicator.style.bottom = "50px";
-    scrollIndicator.style.left = "50%";
-    scrollIndicator.style.transform = "translateX(-50%)";
-    scrollIndicator.style.fontSize = "32px";
-    scrollIndicator.style.color = "white";
-    scrollIndicator.style.opacity = "0.8";
-    scrollIndicator.style.animation = "bounce 1.5s infinite";
-    scrollIndicator.style.cursor = "pointer";
-
-    scrollIndicator.addEventListener("click", () => {
-        if (currentSection < sections.length - 1) {
-            currentSection++;
-            showSection(currentSection);
-        }
-    });
-
-    document.querySelectorAll("nav ul li a").forEach(link => {
-        link.addEventListener("click", (event) => {
-            event.preventDefault();
-            let targetId = link.parentElement.dataset.section;
-            let targetIndex = sectionIds.indexOf(targetId);
-            if (targetIndex !== -1) {
-                currentSection = targetIndex;
-                showSection(currentSection);
-            }
-        });
-    });
-
+    // Кнопка "Проекты"
     let projectsButton = document.querySelector("nav ul li.projects a");
     if (projectsButton) {
         projectsButton.addEventListener("click", (event) => {
             event.preventDefault();
-            let projectSections = document.querySelectorAll("[data-section='projects']");
-            if (projectSections.length > 0) {
-                let firstProjectIndex = sectionIds.indexOf(projectSections[0].id);
-                if (firstProjectIndex !== -1) {
-                    currentSection = firstProjectIndex;
-                    showSection(currentSection);
-                    showProject(0);
-                }
+            let projectsIndex = sectionIds.indexOf("projects");
+            if (projectsIndex !== -1) {
+                currentSection = projectsIndex;
+                showSection(currentSection);
+                showProject(0);
             }
         });
     }
 
-    let projectSlides = document.querySelectorAll(".project-slide");
-    let currentProject = 0;
-
-    function showProject(index) {
-        projectSlides.forEach((slide, i) => {
-            slide.style.opacity = i === index ? "1" : "0";
-            slide.style.visibility = i === index ? "visible" : "hidden";
-        });
-    }
-
+    // Обработчик стрелок (переключение проектов)
     document.addEventListener("keydown", (event) => {
         if (currentSection !== sectionIds.indexOf("projects")) return;
 
@@ -144,5 +96,46 @@ document.addEventListener("DOMContentLoaded", function () {
             currentProject = (currentProject - 1 + projectSlides.length) % projectSlides.length;
             showProject(currentProject);
         }
+    });
+
+    showSection(currentSection);
+    showProject(0);
+
+    // Убираем скролл
+    document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
+
+    // Анимация стрелки скролла
+    let scrollIndicator = document.querySelector("#scroll-indicator");
+    if (scrollIndicator) {
+        scrollIndicator.style.position = "absolute";
+        scrollIndicator.style.bottom = "50px";
+        scrollIndicator.style.left = "50%";
+        scrollIndicator.style.transform = "translateX(-50%)";
+        scrollIndicator.style.fontSize = "32px";
+        scrollIndicator.style.color = "white";
+        scrollIndicator.style.opacity = "0.8";
+        scrollIndicator.style.animation = "bounce 1.5s infinite";
+        scrollIndicator.style.cursor = "pointer";
+
+        scrollIndicator.addEventListener("click", () => {
+            if (currentSection < sections.length - 1) {
+                currentSection++;
+                showSection(currentSection);
+            }
+        });
+    }
+
+    // Обработчик кликов по навигации
+    document.querySelectorAll("nav ul li a").forEach(link => {
+        link.addEventListener("click", (event) => {
+            event.preventDefault();
+            let targetId = link.parentElement.dataset.section;
+            let targetIndex = sectionIds.indexOf(targetId);
+            if (targetIndex !== -1) {
+                currentSection = targetIndex;
+                showSection(currentSection);
+            }
+        });
     });
 });
