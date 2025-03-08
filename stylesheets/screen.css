@@ -412,20 +412,41 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   transform: translate3d(0, -300vh, 0);
 }
 
-/* Убираем смещение вверх */
-.profile-scroll-container {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  transition: 1s transform cubic-bezier(0.91, 0.03, 0.12, 1);
-  transform: none !important;
+/* line 86, ../sass/_animations.scss */
+.profile-1 .profile-scroll-container {
+  transform: translate3d(0, -20%, 0);
+}
+@media screen and (min-width: 600px) {
+  .profile-1 .profile-scroll-container {
+    transform: translate3d(0, -66vh, 0);
+  }
 }
 
-.profile-1 .profile-scroll-container,
-.profile-2 .profile-scroll-container,
-.profile-3 .profile-scroll-container,
+.profile-2 .profile-scroll-container {
+  transform: translate3d(0, -40%, 0);
+}
+@media screen and (min-width: 600px) {
+  .profile-2 .profile-scroll-container {
+    transform: translate3d(0, -132vh, 0);
+  }
+}
+
+.profile-3 .profile-scroll-container {
+  transform: translate3d(0, -60%, 0);
+}
+@media screen and (min-width: 600px) {
+  .profile-3 .profile-scroll-container {
+    transform: translate3d(0, -198vh, 0);
+  }
+}
+
 .profile-4 .profile-scroll-container {
-  transform: none !important;
+  transform: translate3d(0, -80%, 0);
+}
+@media screen and (min-width: 600px) {
+  .profile-4 .profile-scroll-container {
+    transform: translate3d(0, -264vh, 0);
+  }
 }
 
 
