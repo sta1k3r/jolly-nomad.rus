@@ -30,12 +30,12 @@ document.addEventListener("DOMContentLoaded", function () {
         setTimeout(() => { isScrolling = false; }, 1000);
     }
 
-    function showProject(index) {
-        projectSlides.forEach((slide, i) => {
-            slide.style.opacity = i === index ? "1" : "0";
-            slide.style.visibility = i === index ? "visible" : "hidden";
-        });
-    }
+function showProject(index) {
+    projectSlides.forEach((slide, i) => {
+        slide.classList.remove("active");
+    });
+    projectSlides[index].classList.add("active");
+}
 
     // Обработчик скролла
     window.addEventListener("wheel", (event) => {
@@ -131,14 +131,14 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Обработчик кликов по навигации
-    document.querySelectorAll("nav ul li a").forEach(link => {
-        link.addEventListener("click", (event) => {
-            event.preventDefault();
-            let targetId = link.parentElement.dataset.section;
-            let targetIndex = sectionIds.indexOf(targetId);
-            if (targetIndex !== -1) {
-                currentSection = targetIndex;
-                showSection(currentSection);
-            }
-        });
+document.querySelectorAll("nav ul li a").forEach(link => {
+    link.addEventListener("click", (event) => {
+        event.preventDefault();
+        let targetId = link.parentElement.dataset.section;
+        let targetIndex = sectionIds.indexOf(targetId);
+        if (targetIndex !== -1) {
+            currentSection = targetIndex;
+            showSection(currentSection);
+        }
     });
+});
