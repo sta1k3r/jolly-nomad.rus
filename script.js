@@ -23,18 +23,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
         document.body.classList.toggle("section-active", index !== 0);
 
-        // Показываем все кнопки навигации на главной
         if (index === 0) {
             navItems.forEach(item => item.style.display = "block");
         } else {
             navItems.forEach(item => item.style.display = "none");
-
             let activeSection = sections[index].dataset.section;
             let activeLink = document.querySelector(`nav ul li[data-section='${activeSection}']`);
             if (activeLink) activeLink.style.display = "block";
         }
 
-        // Обновление активной кнопки навигации
         navLinks.forEach(link => link.classList.remove("active"));
         let activeNav = document.querySelector(`nav ul li[data-section='${sections[index].dataset.section}'] a`);
         if (activeNav) activeNav.classList.add("active");
@@ -55,11 +52,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     showSection(currentSection);
 
-    // Убираем скролл
     document.body.style.overflow = "hidden";
     document.documentElement.style.overflow = "hidden";
 
-    // Стрелка скролла
     let scrollIndicator = document.querySelector("#scroll-indicator");
     scrollIndicator.style.position = "absolute";
     scrollIndicator.style.bottom = "50px";
@@ -78,7 +73,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Навигация по клику на ссылки
     document.querySelectorAll("nav ul li a").forEach(link => {
         link.addEventListener("click", (event) => {
             event.preventDefault();
@@ -91,21 +85,41 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Исправление: Кнопка "Проекты"
     let projectsButton = document.querySelector("nav ul li.projects a");
     if (projectsButton) {
         projectsButton.addEventListener("click", (event) => {
             event.preventDefault();
-
-            // Проверяем, есть ли несколько секций проектов
             let projectSections = document.querySelectorAll("[data-section='projects']");
             if (projectSections.length > 0) {
                 let firstProjectIndex = sectionIds.indexOf(projectSections[0].id);
                 if (firstProjectIndex !== -1) {
                     currentSection = firstProjectIndex;
                     showSection(currentSection);
+                    showProject(0);
                 }
             }
         });
     }
+
+    let projectSlides = document.querySelectorAll(".project-slide");
+    let currentProject = 0;
+
+    function showProject(index) {
+        projectSlides.forEach((slide, i) => {
+            slide.style.opacity = i === index ? "1" : "0";
+            slide.style.visibility = i === index ? "visible" : "hidden";
+        });
+    }
+
+    document.addEventListener("keydown", (event) => {
+        if (currentSection !== sectionIds.indexOf("projects")) return;
+
+        if (event.key === "ArrowRight") {
+            currentProject = (currentProject + 1) % projectSlides.length;
+            showProject(currentProject);
+        } else if (event.key === "ArrowLeft") {
+            currentProject = (currentProject - 1 + projectSlides.length) % projectSlides.length;
+            showProject(currentProject);
+        }
+    });
 });
