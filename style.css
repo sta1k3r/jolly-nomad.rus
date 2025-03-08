@@ -84,9 +84,8 @@ nav ul li a.active::after {
     align-items: center;
     justify-content: space-between;
     max-width: 80%;
-    text-align: left;
     padding: 40px;
-    background-color: rgba(255, 255, 255, 0.1); /* Цветной блок */
+    background: rgba(255, 255, 255, 0.1); /* Цветной блок */
     border-radius: 15px;
     margin: 40px auto;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
