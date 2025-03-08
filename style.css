@@ -1,143 +1,101 @@
 /* Общие стили */
 body {
     margin: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: Arial, sans-serif;
     background-color: #000;
     color: white;
     text-align: center;
+    overflow: hidden;
 }
 
 /* Навигация */
 nav {
     position: fixed;
     top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: transparent;
+    width: 100%;
+    display: flex;
+    justify-content: center;
     z-index: 1000;
 }
-
 nav ul {
-    display: flex;
     list-style: none;
-    gap: 40px;
+    display: flex;
+    gap: 30px;
     padding: 0;
     margin: 0;
-    justify-content: center;
 }
-
-nav ul li {
-    display: block;
-}
-
 nav ul li a {
-    font-size: 16px;
-    font-weight: 300; /* Тонкий текст */
-    text-transform: uppercase;
-    transition: color 0.3s ease-in-out;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.3s;
 }
-
-/* Полоска под кнопкой с анимацией */
+nav ul li a:hover {
+    color: #f0a500;
+}
 nav ul li a::after {
     content: "";
     position: absolute;
-    left: 50%;
+    left: 0;
     bottom: 0;
-    width: 0%;
+    width: 100%;
     height: 2px;
     background: white;
     transform: scaleX(0);
-    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+}
+nav ul li a:hover::after {
+    transform: scaleX(1);
 }
 
-nav ul li a:hover::after,
-nav ul li a.active::after {
-    width: 100%;
-    left: 0;
-}
-
-/* Приветственное окно */
-#welcome {
+/* Секции */
+.section {
+    width: 100vw;
+    height: 100vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    text-align: center;
-    padding: 0 20px;
+    flex-direction: column;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+}
+.section.active {
+    opacity: 1;
+    visibility: visible;
 }
 
+/* Приветствие */
 #welcome h1 {
     font-size: 48px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
-
-#welcome p {
-    font-size: 18px;
-    font-weight: 300;
-    max-width: 60%;
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    font-size: 24px;
+    animation: bounce 1.5s infinite;
+    cursor: pointer;
+}
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
 }
 
 /* Проекты */
-.project-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 80%;
-    padding: 40px;
-    background: rgba(255, 255, 255, 0.1); /* Цветной блок */
-    border-radius: 15px;
-    margin: 40px auto;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    position: relative;
-}
-
-.project-container:hover {
-    transform: scale(1.02);
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-}
-
-.project-container img {
-    width: 40%;
-    border-radius: 15px;
-    position: absolute;
-    right: -20px;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.project-container .text {
+.project-slide {
     width: 60%;
-}
-
-.project-container h2 {
-    font-size: 36px;
-    margin-bottom: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 15px;
     text-align: left;
-}
-
-.project-container p {
-    font-size: 18px;
-    text-align: left;
-}
-
-/* Исправленный скролл */
-html, body {
-    overflow-y: scroll;
-    height: 100%;
-}
-
-/* Анимация появления секций */
-section {
-    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
-    transform: translateY(10px);
     opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
 }
-
-section.active {
-    transform: translateY(0);
+.project-slide.active {
     opacity: 1;
+    visibility: visible;
 }
