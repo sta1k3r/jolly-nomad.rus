@@ -1,9 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
     let sections = document.querySelectorAll("section");
     let navLinks = document.querySelectorAll("nav ul li a");
-    let navItems = document.querySelectorAll("nav ul li");
-    let projectSlides = document.querySelectorAll(".project-slide");
     let sectionIds = Array.from(sections).map(sec => sec.id);
+    let projectSlides = document.querySelectorAll(".project-slide");
     let currentSection = 0;
     let currentProject = 0;
     let isScrolling = false;
@@ -22,22 +21,8 @@ document.addEventListener("DOMContentLoaded", function () {
             section.style.alignItems = "center";
         });
 
-        document.body.classList.toggle("section-active", index !== 0);
-
-        // Показываем все кнопки навигации на главной
-        if (index === 0) {
-            navItems.forEach(item => item.style.display = "block");
-        } else {
-            navItems.forEach(item => item.style.display = "none");
-
-            let activeSection = sections[index].dataset.section;
-            let activeLink = document.querySelector(`nav ul li[data-section='${activeSection}']`);
-            if (activeLink) activeLink.style.display = "block";
-        }
-
-        // Обновление активной кнопки навигации
         navLinks.forEach(link => link.classList.remove("active"));
-        let activeNav = document.querySelector(`nav ul li[data-section='${sections[index].dataset.section}'] a`);
+        let activeNav = document.querySelector(`nav ul li a[href='#${sections[index].id}']`);
         if (activeNav) activeNav.classList.add("active");
 
         isScrolling = true;
@@ -71,7 +56,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Кнопка "Проекты"
     let projectsButton = document.querySelector("nav ul li.projects a");
     if (projectsButton) {
         projectsButton.addEventListener("click", (event) => {
@@ -85,7 +69,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Обработчик стрелок (переключение проектов)
     document.addEventListener("keydown", (event) => {
         if (currentSection !== sectionIds.indexOf("projects")) return;
 
@@ -100,6 +83,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     showSection(currentSection);
     showProject(0);
+});
+
 
     // Убираем скролл
     document.body.style.overflow = "hidden";
