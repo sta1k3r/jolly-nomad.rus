@@ -1,13 +1,22 @@
 /* Общие стили */
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-color: #000;
     color: white;
     text-align: center;
 }
 
 /* Навигация */
+nav {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: transparent;
+    z-index: 1000;
+}
+
 nav ul {
     display: flex;
     list-style: none;
@@ -15,11 +24,6 @@ nav ul {
     padding: 0;
     margin: 0;
     justify-content: center;
-    position: fixed;
-    top: 40px;
-    width: 100%;
-    background: transparent;
-    z-index: 1000;
 }
 
 nav ul li {
@@ -27,21 +31,21 @@ nav ul li {
 }
 
 nav ul li a {
-    font-size: 16px; /* Сделал шрифт тоньше */
-    font-weight: 300; /* Уменьшил жирность */
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    position: relative;
     text-decoration: none;
+    font-size: 16px;
+    font-weight: 300; /* Сделаем текст тонким */
     color: white;
+    position: relative;
+    padding-bottom: 5px;
     transition: color 0.3s ease-in-out;
 }
 
+/* Анимация полоски под активной кнопкой */
 nav ul li a::after {
     content: "";
     position: absolute;
     left: 0;
-    bottom: -3px;
+    bottom: 0;
     width: 100%;
     height: 2px;
     background: white;
@@ -49,12 +53,31 @@ nav ul li a::after {
     transition: transform 0.3s ease-in-out;
 }
 
-nav ul li a:hover::after {
-    transform: scaleX(1); /* Анимация заполнения полоски */
-}
-
+nav ul li a:hover::after,
 nav ul li a.active::after {
     transform: scaleX(1);
+}
+
+/* Приветственное окно */
+#welcome {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+#welcome h1 {
+    font-size: 48px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+#welcome p {
+    font-size: 18px;
+    font-weight: 300;
+    max-width: 60%;
 }
 
 /* Проекты */
@@ -63,73 +86,43 @@ nav ul li a.active::after {
     align-items: center;
     justify-content: space-between;
     max-width: 80%;
-    padding: 40px;
-    background: linear-gradient(135deg, #1e1e1e, #2a2a2a);
-    border-radius: 20px;
-    position: relative;
-    margin-bottom: 50px;
+    text-align: left;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1); /* Полупрозрачный фон */
+    border-radius: 15px;
+    margin: 20px auto;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.project-container:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
 }
 
 .project-container img {
-    width: 45%;
-    border-radius: 20px;
-    position: absolute;
-    right: -10%;
-    top: 50%;
-    transform: translateY(-50%);
+    width: 40%;
+    border-radius: 15px;
 }
 
 .project-container .text {
     width: 50%;
-    text-align: left;
-    padding: 20px;
 }
 
 .project-container h2 {
     font-size: 36px;
     margin-bottom: 10px;
+    text-align: left;
 }
 
 .project-container p {
     font-size: 18px;
-}
-
-
-/* Убираем скролл */
-html, body {
-    overflow: hidden;
-    height: 100%;
-}
-
-/* Исправляем стили для "Обо мне", "Партнёрство" и "Контакты" */
-#about, #partnership, #contacts {
-    display: flex !important;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    flex-direction: column;
-    text-align: center;
-}
-
-/* Стили для заголовков */
-#about h2, #partnership h2, #contacts h2 {
-    font-size: 32px;
-    margin-bottom: 10px;
-}
-
-/* Проекты - стили переключения */
-.project-slide {
-    position: absolute;
-    width: 80%;
     text-align: left;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
 }
 
-.project-slide.active {
-    opacity: 1;
-    visibility: visible;
+/* Исправленный скролл */
+html, body {
+    overflow-y: scroll;
+    height: 100%;
 }
 
 /* Анимация появления секций */
@@ -142,52 +135,4 @@ section {
 section.active {
     transform: translateY(0);
     opacity: 1;
-}
-
-/* Минималистичный стиль навигации */
-nav ul li a {
-    font-size: 18px;
-    font-weight: 500;
-    text-transform: uppercase;
-}
-
-nav ul li a::after {
-    height: 3px;
-    background: white;
-}
-
-/* Кнопки навигации для проектов */
-#projects-navigation {
-    position: absolute;
-    bottom: 50px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 20px;
-}
-
-#projects-navigation button {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 20px;
-    cursor: pointer;
-}
-
-#projects-navigation button:hover {
-    color: #f5a623;
-    transition: color 0.3s ease-in-out;
-}
-
-.welcome-text {
-    font-size: 48px;
-    font-weight: bold;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-}
-
-.welcome-subtext {
-    font-size: 20px;
-    max-width: 60%;
-    text-align: center;
 }
