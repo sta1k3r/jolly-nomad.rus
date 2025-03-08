@@ -2,13 +2,14 @@ document.addEventListener("DOMContentLoaded", function () {
     let sections = document.querySelectorAll("section");
     let navLinks = document.querySelectorAll("nav ul li a");
     let navItems = document.querySelectorAll("nav ul li");
+    let projectSlides = document.querySelectorAll(".project-slide");
     let sectionIds = Array.from(sections).map(sec => sec.id);
     let currentSection = 0;
+    let currentProject = 0;
     let isScrolling = false;
 
     function showSection(index) {
         sections.forEach((section, i) => {
-            section.style.transition = "opacity 1s ease-in-out, visibility 1s ease-in-out";
             section.style.opacity = i === index ? "1" : "0";
             section.style.visibility = i === index ? "visible" : "hidden";
             section.style.position = "absolute";
@@ -23,10 +24,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         document.body.classList.toggle("section-active", index !== 0);
 
-        if (index === 0) {
+     if (index === 0) {
             navItems.forEach(item => item.style.display = "block");
         } else {
             navItems.forEach(item => item.style.display = "none");
+
             let activeSection = sections[index].dataset.section;
             let activeLink = document.querySelector(`nav ul li[data-section='${activeSection}']`);
             if (activeLink) activeLink.style.display = "block";
@@ -40,15 +42,36 @@ document.addEventListener("DOMContentLoaded", function () {
         setTimeout(() => { isScrolling = false; }, 1200);
     }
 
+    function showNextProject() {
+        projectSlides.forEach((slide, i) => {
+            slide.style.opacity = i === currentProject ? "1" : "0";
+            slide.style.visibility = i === currentProject ? "visible" : "hidden";
+        });
+    }
+
     window.addEventListener("wheel", (event) => {
         if (isScrolling) return;
-        if (event.deltaY > 0) {
-            currentSection = Math.min(currentSection + 1, sections.length - 1);
+
+        if (sections[currentSection].dataset.section === "projects") {
+            if (event.deltaY > 0) {
+                currentProject = Math.min(currentProject + 1, projectSlides.length - 1);
+            } else {
+                currentProject = Math.max(currentProject - 1, 0);
+            }
+            showNextProject();
         } else {
-            currentSection = Math.max(currentSection - 1, 0);
+            if (event.deltaY > 0) {
+                currentSection = Math.min(currentSection + 1, sections.length - 1);
+            } else {
+                currentSection = Math.max(currentSection - 1, 0);
+            }
+            showSection(currentSection);
         }
-        showSection(currentSection);
     });
+
+    showSection(currentSection);
+    showNextProject();
+});
 
     showSection(currentSection);
 
