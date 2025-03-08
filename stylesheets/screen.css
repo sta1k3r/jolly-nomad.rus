@@ -617,7 +617,7 @@ p {
 @media screen and (min-width: 980px) {
   /* line 118, ../sass/_typo.scss */
   .project-title-big {
-    font-size: 10.7vw;
+    font-size: 6.7vw;
     margin-top: -0.5vw;
     line-height: 12vw;
   }
