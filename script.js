@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
             section.style.display = "flex";
             section.style.justifyContent = "center";
             section.style.alignItems = "center";
+            section.style.transition = "opacity 1s ease-in-out, visibility 1s ease-in-out";
         });
 
         navLinks.forEach(link => link.classList.remove("active"));
@@ -26,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (activeNav) activeNav.classList.add("active");
 
         isScrolling = true;
-        setTimeout(() => { isScrolling = false; }, 1200);
+        setTimeout(() => { isScrolling = false; }, 1000);
     }
 
     function showProject(index) {
@@ -36,6 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    // Обработчик скролла
     window.addEventListener("wheel", (event) => {
         if (isScrolling) return;
 
@@ -56,6 +58,23 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+    // Обработчик кликов по навигации
+    navLinks.forEach(link => {
+        link.addEventListener("click", (event) => {
+            event.preventDefault();
+            let targetId = link.getAttribute("href").substring(1);
+            let targetIndex = sectionIds.indexOf(targetId);
+            if (targetIndex !== -1) {
+                currentSection = targetIndex;
+                showSection(currentSection);
+                if (targetId === "projects") {
+                    showProject(0);
+                }
+            }
+        });
+    });
+
+    // Исправление: Кнопка "Проекты"
     let projectsButton = document.querySelector("nav ul li.projects a");
     if (projectsButton) {
         projectsButton.addEventListener("click", (event) => {
@@ -69,6 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    // Обработчик стрелок (переключение проектов)
     document.addEventListener("keydown", (event) => {
         if (currentSection !== sectionIds.indexOf("projects")) return;
 
