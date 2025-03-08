@@ -58,7 +58,6 @@ nav ul li a.active::after {
     transform: scaleX(1);
 }
 
-
 /* Приветственное окно */
 #welcome {
     display: flex;
@@ -67,6 +66,7 @@ nav ul li a.active::after {
     align-items: center;
     height: 100vh;
     text-align: center;
+    padding: 0 20px;
 }
 
 #welcome h1 {
