@@ -3356,7 +3356,7 @@ header .menu span:nth-child(4) {
   top: 200px;
   position: absolute;
   z-index: 0;
-  background: white;
+  background: #4c505c;
 }
 @media screen and (min-width: 600px) {
   /* line 188, ../sass/_project-casestudy.scss */
@@ -4550,7 +4550,7 @@ body {
   overflow: hidden;
   font-family: "Overpass", sans-serif;
   color: #848484;
-  background: #202743;
+  background: #4c505c;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
