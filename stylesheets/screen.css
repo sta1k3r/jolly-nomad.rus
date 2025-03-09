@@ -416,7 +416,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 .profile-1 .profile-scroll-container {
   transform: translate3d(0, -20%, 0);
 }
-
 @media screen and (min-width: 600px) {
   .profile-1 .profile-scroll-container {
     transform: translate3d(0, -66vh, 0);
@@ -426,7 +425,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 .profile-2 .profile-scroll-container {
   transform: translate3d(0, -40%, 0);
 }
-
 @media screen and (min-width: 600px) {
   .profile-2 .profile-scroll-container {
     transform: translate3d(0, -132vh, 0);
@@ -436,10 +434,18 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 .profile-3 .profile-scroll-container {
   transform: translate3d(0, -60%, 0);
 }
-
 @media screen and (min-width: 600px) {
   .profile-3 .profile-scroll-container {
     transform: translate3d(0, -198vh, 0);
+  }
+}
+
+.profile-4 .profile-scroll-container {
+  transform: translate3d(0, -80%, 0);
+}
+@media screen and (min-width: 600px) {
+  .profile-4 .profile-scroll-container {
+    transform: translate3d(0, -264vh, 0);
   }
 }
 
@@ -3356,7 +3362,7 @@ header .menu span:nth-child(4) {
   top: 200px;
   position: absolute;
   z-index: 0;
-  background: #4c505c;
+  background: white;
 }
 @media screen and (min-width: 600px) {
   /* line 188, ../sass/_project-casestudy.scss */
@@ -4550,7 +4556,7 @@ body {
   overflow: hidden;
   font-family: "Overpass", sans-serif;
   color: #848484;
-  background: #4c505c;
+  background: white;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
