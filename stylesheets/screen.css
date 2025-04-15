@@ -594,7 +594,20 @@ p {
 /* line 110, ../sass/_typo.scss */
 .project-title {
   color: #FFFFFF;
+  font-size: clamp(16px, 5vw, 28px); /* адаптивный размер */
+  word-break: break-word; /* разрешает перенос по словам */
+  text-align: center;
+  max-width: 90vw;
 }
+
+@media (max-width: 768px) {
+  .project-title {
+    font-size: 18px;
+    word-break: break-word;
+    max-width: 90vw;
+  }
+}
+
 /* line 113, ../sass/_typo.scss */
 .project-title .letter {
   display: inline-block;
