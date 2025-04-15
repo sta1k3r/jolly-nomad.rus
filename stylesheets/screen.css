@@ -2364,12 +2364,15 @@ header .menu span:nth-child(4) {
   display: flex;
   width: max-content;
   flex-wrap: nowrap;
-  animation: citiesMove 20s linear infinite;
 }
 
-@media (min-width: 980px) {
+@media screen and (min-width: 980px) {
+  .cities-list-container {
+    animation: citiesMove 20s linear infinite;
+    animation-play-state: paused;
+  }
+
   .profile-1 .cities-list-container {
-    animation: citiesMove 8s linear infinite alternate;
     animation-play-state: running;
   }
 
