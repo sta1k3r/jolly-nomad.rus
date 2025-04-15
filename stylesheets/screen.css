@@ -4676,3 +4676,19 @@ body.ov-visible {
     opacity: 0.08;
   }
 }
+
+/* Базовая сетка */
+.col-10 { width: 83.33333%; }
+.col-offset-1 { margin-left: 8.33333%; }
+
+/* Планшеты */
+@media screen and (max-width: 980px) {
+  .col-m-10 { width: 83.33333%; }
+  .col-m-offset-1 { margin-left: 8.33333%; }
+}
+
+/* Мобильные */
+@media screen and (max-width: 480px) {
+  .col-s-4 { width: 100%; }
+  .col-s-offset-0 { margin-left: 0; }
+}
