@@ -2728,7 +2728,6 @@ header .menu span:nth-child(4) {
 /* line 62, ../sass/_project.scss */
 .project-slider {
   position: relative;
-  display: flex;
   flex-direction: column;
   justify-content: center;
   height: 100%;
