@@ -6972,7 +6972,7 @@ window.onload = function(e) {
     projectTotal = 4,
     profileTotal = 4,
     isProject = !1,
-    projectTable = ["engie", "cic", "cgi", "artspire", "tokkun"],
+    projectTable = ["jollylevelup", "arcanegears", "ai", "dev", "tender"],
     $("body").removeClass("preload"),
     location.hash && (currentPage = location.hash.substring(1));
     let t = .01 * window.innerHeight;
@@ -7271,7 +7271,7 @@ window.onload = function(e) {
         speed: 2e3,
         cssEase: "cubic-bezier(0.770, 0.000, 0.175, 1.000)"
     }),
-    location.hash && ("engie" == currentPage && (project = 0),
+    location.hash && ("jollylevelup" == currentPage && (project = 0),
     "cic" == currentPage && (project = 1),
     "cgi" == currentPage && (project = 2),
     "artspire" == currentPage && (project = 3),
