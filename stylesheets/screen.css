@@ -2728,6 +2728,13 @@ header .menu span:nth-child(4) {
 /* line 62, ../sass/_project.scss */
 .project-slider {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  min-height: 100vh; /* или фиксированная высота */
+  padding: 3rem 2rem;
+  box-sizing: border-box;
 }
 /* line 65, ../sass/_project.scss */
 .project-slider .slick-list {
@@ -4700,10 +4707,11 @@ body.ov-visible {
   overflow-wrap: break-word;
 }
 .project-title-small {
-  display: block;
-  margin-top: 0.5rem;
-  font-size: 1.1rem;
-  color: #ccc;
+  max-width: 500px;
   line-height: 1.4;
+  display: block;
+  word-break: break-word;
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
 }
 
