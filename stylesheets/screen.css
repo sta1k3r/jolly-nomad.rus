@@ -4692,3 +4692,18 @@ body.ov-visible {
   .col-s-4 { width: 100%; }
   .col-s-offset-0 { margin-left: 0; }
 }
+
+.project-title-block {
+  margin-bottom: 2rem;
+  max-width: 600px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+.project-title-small {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+  color: #ccc;
+  line-height: 1.4;
+}
+
