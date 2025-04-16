@@ -417,38 +417,44 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   transform: translate3d(0, -20%, 0);
 }
 @media screen and (min-width: 600px) {
+  /* line 86, ../sass/_animations.scss */
   .profile-1 .profile-scroll-container {
     transform: translate3d(0, -66vh, 0);
   }
 }
 
+/* line 86, ../sass/_animations.scss */
 .profile-2 .profile-scroll-container {
   transform: translate3d(0, -40%, 0);
 }
 @media screen and (min-width: 600px) {
+  /* line 86, ../sass/_animations.scss */
   .profile-2 .profile-scroll-container {
     transform: translate3d(0, -132vh, 0);
   }
 }
 
+/* line 86, ../sass/_animations.scss */
 .profile-3 .profile-scroll-container {
   transform: translate3d(0, -60%, 0);
 }
 @media screen and (min-width: 600px) {
+  /* line 86, ../sass/_animations.scss */
   .profile-3 .profile-scroll-container {
     transform: translate3d(0, -198vh, 0);
   }
 }
 
+/* line 86, ../sass/_animations.scss */
 .profile-4 .profile-scroll-container {
   transform: translate3d(0, -80%, 0);
 }
 @media screen and (min-width: 600px) {
+  /* line 86, ../sass/_animations.scss */
   .profile-4 .profile-scroll-container {
     transform: translate3d(0, -264vh, 0);
   }
 }
-
 
 @keyframes loading {
   99% {
@@ -594,20 +600,7 @@ p {
 /* line 110, ../sass/_typo.scss */
 .project-title {
   color: #FFFFFF;
-  font-size: clamp(16px, 5vw, 28px); /* адаптивный размер */
-  word-break: break-word; /* разрешает перенос по словам */
-  text-align: center;
-  max-width: 90vw;
 }
-
-@media (max-width: 768px) {
-  .project-title {
-    font-size: 18px;
-    word-break: break-word;
-    max-width: 90vw;
-  }
-}
-
 /* line 113, ../sass/_typo.scss */
 .project-title .letter {
   display: inline-block;
@@ -624,9 +617,9 @@ p {
 @media screen and (min-width: 980px) {
   /* line 118, ../sass/_typo.scss */
   .project-title-big {
-    font-size: 5vw;
+    font-size: 10.7vw;
     margin-top: -0.5vw;
-    line-height: 11.9vw;
+    line-height: 12vw;
   }
 }
 /* line 133, ../sass/_typo.scss */
@@ -2309,11 +2302,8 @@ header .menu span:nth-child(4) {
 }
 /* line 25, ../sass/_profile.scss */
 .profile-scroll-container {
-  position: relative;
   width: 100%;
-  min-height: auto;
-  height: auto !important;
-  overflow: visible;
+  height: 500%;
 }
 /* line 30, ../sass/_profile.scss */
 .profile-section {
@@ -2362,25 +2352,17 @@ header .menu span:nth-child(4) {
 /* line 67, ../sass/_profile.scss */
 .cities-list-container {
   display: flex;
-  width: max-content;
-  flex-wrap: nowrap;
+  width: auto;
+  flex-wrap: wrap;
 }
-
 @media screen and (min-width: 980px) {
+  /* line 67, ../sass/_profile.scss */
   .cities-list-container {
-    animation: citiesMove 20s linear infinite;
-    animation-play-state: paused;
-  }
-
-  .profile-1 .cities-list-container {
-    animation-play-state: running;
-  }
-
-  .cities-list-container:hover {
+    flex-wrap: nowrap;
+    animation: citiesMove 8s linear infinite alternate;
     animation-play-state: paused;
   }
 }
-
 @media screen and (min-width: 980px) {
   /* line 78, ../sass/_profile.scss */
   .profile-1 .cities-list-container {
@@ -2393,60 +2375,31 @@ header .menu span:nth-child(4) {
 }
 
 /* line 89, ../sass/_profile.scss */
-.cities-list-container {
-  display: flex;
-  width: max-content; // важно!
-  flex-wrap: nowrap;
-  animation: citiesMove 20s linear infinite;
-  animation-play-state: paused;
-}
-
-.profile-1 .cities-list-container {
-  animation-play-state: running;
-}
-
-.cities-list-container:hover {
-  animation-play-state: paused;
-}
-
 .city {
   position: relative;
-  margin-right: 3.5rem;
-  font-size: 25rem;
+  margin-right: 8vw;
+  font-size: 14vw;
   font-weight: 600;
   color: #000000;
-  white-space: nowrap;
   transition: 0.5s color cubic-bezier(0.91, 0.03, 0.12, 1);
-
-  // включи, если нужен эффект при наведении:
-  // &:hover {
-  //   color: $white;
-  // }
+  /* &:hover {
+  	color: $white;
+  } */
 }
-
 @media screen and (max-width: 979px) {
-  .cities-list-container {
-    flex-wrap: wrap;
-    width: 100%;
-    animation: none;
-  }
-
+  /* line 89, ../sass/_profile.scss */
   .city {
     display: block;
     width: 100%;
-    margin-bottom: 1rem;
+    margin-bottom: 1vw;
   }
 }
 
 @keyframes citiesMove {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-50%);
+  to {
+    transform: translate3d(-150%, 0, 0);
   }
 }
-
 /* line 112, ../sass/_profile.scss */
 .client-list {
   display: flex;
@@ -2728,13 +2681,6 @@ header .menu span:nth-child(4) {
 /* line 62, ../sass/_project.scss */
 .project-slider {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100%;
-  min-height: 100vh; /* или фиксированная высота */
-  padding: 3rem 2rem;
-  box-sizing: border-box;
 }
 /* line 65, ../sass/_project.scss */
 .project-slider .slick-list {
@@ -4683,35 +4629,3 @@ body.ov-visible {
     opacity: 0.08;
   }
 }
-
-/* Базовая сетка */
-.col-10 { width: 83.33333%; }
-.col-offset-1 { margin-left: 8.33333%; }
-
-/* Планшеты */
-@media screen and (max-width: 980px) {
-  .col-m-10 { width: 83.33333%; }
-  .col-m-offset-1 { margin-left: 8.33333%; }
-}
-
-/* Мобильные */
-@media screen and (max-width: 480px) {
-  .col-s-4 { width: 100%; }
-  .col-s-offset-0 { margin-left: 0; }
-}
-
-.project-title-block {
-  margin-bottom: 2rem;
-  max-width: 600px;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-}
-.project-title-small {
-  max-width: 500px;
-  line-height: 1.4;
-  display: block;
-  word-break: break-word;
-  font-size: 1.1rem;
-  margin-top: 0.5rem;
-}
-
