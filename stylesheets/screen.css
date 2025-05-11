@@ -4736,3 +4736,64 @@ body.ov-visible {
     max-height: 32px;
   }
 }
+
+/* ---------- FIX LOGO ---------- */
+.logo-jn {
+  display: inline-block;
+  height: auto;
+  width: auto;
+  max-height: 40px;
+  max-width: 100%;
+  object-fit: contain;
+  vertical-align: middle;
+}
+@media (max-width: 768px) {
+  .logo-jn {
+    max-height: 32px;
+  }
+}
+
+/* ---------- FIX PROJECT BLOCKS ---------- */
+.project-content {
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 1rem;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  text-align: center;
+}
+.project-description {
+  font-size: clamp(14px, 3vw, 18px);
+  margin: 1rem 0;
+  line-height: 1.4;
+}
+.project-button {
+  display: inline-block;
+  font-size: 14px;
+  padding: 0.5rem 1rem;
+  white-space: nowrap;
+  word-break: keep-all;
+}
+
+/* ---------- FIX CITIES MARQUEE ---------- */
+.cities-list-container {
+  display: flex;
+  gap: 2rem;
+  overflow: hidden;
+  animation: marquee 20s linear infinite;
+  white-space: nowrap;
+}
+.city {
+  flex: 0 0 auto;
+  font-size: clamp(20px, 5vw, 36px);
+  font-weight: bold;
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+
+/* ---------- GENERAL SAFETY ---------- */
+html, body {
+  overflow-x: hidden;
+}
