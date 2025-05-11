@@ -4705,3 +4705,17 @@ body.ov-visible {
   margin-top: 0.5rem;
 }
 
+/* ---------------- LOGO FIX ---------------- */
+.logo-jn {
+  height: auto;
+  max-height: 40px;
+  width: auto;
+  max-width: 100%;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .logo-jn {
+    max-height: 32px;
+  }
+}
