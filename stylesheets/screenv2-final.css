@@ -36,6 +36,13 @@ table {
   border-spacing: 0;
 }
 
+.logo-jn {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
 .reveal {
   opacity: 0;
   transform: translateY(20px);
