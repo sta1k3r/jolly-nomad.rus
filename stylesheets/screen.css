@@ -528,7 +528,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 /* line 55, ../sass/_typo.scss */
 .h3 {
-  font-size: 20px;
+  font-size: clamp(16px, 2.2vw, 20px);
   color: #000000;
   font-weight: 600;
   margin-bottom: 30px;
@@ -557,7 +557,7 @@ p {
 @media screen and (min-width: 600px) and (orientation: portrait) {
   /* line 75, ../sass/_typo.scss */
   p {
-    font-size: 18px;
+    font-size: clamp(15px, 2vw, 18px);
   }
 }
 
@@ -602,7 +602,7 @@ p {
 
 @media (max-width: 768px) {
   .project-title {
-    font-size: 18px;
+    font-size: clamp(15px, 2vw, 18px);
     word-break: break-word;
     max-width: 90vw;
   }
@@ -834,7 +834,7 @@ p {
   line-height: 1;
   letter-spacing: 2px;
   font-family: "Barlow", sans-serif;
-  font-size: 14px;
+  font-size: clamp(12px, 1vw, 14px);
   color: #FFFFFF;
   border: 1px solid #FFFFFF;
   text-transform: uppercase;
@@ -1760,7 +1760,7 @@ header .menu span:nth-child(4) {
   letter-spacing: 4px;
   font-family: "Barlow", sans-serif;
   font-weight: 600;
-  font-size: 14px;
+  font-size: clamp(12px, 1vw, 14px);
   color: rgba(255, 255, 255, 0.4);
   align-self: flex-start;
   margin-top: 1.2vh;
@@ -2566,7 +2566,7 @@ header .menu span:nth-child(4) {
 .feature-logo span {
   display: block;
   margin-top: 15px;
-  font-size: 14px;
+  font-size: clamp(12px, 1vw, 14px);
   color: #848484;
 }
 @media screen and (min-width: 980px) {
@@ -2605,7 +2605,7 @@ header .menu span:nth-child(4) {
 @media screen and (min-width: 600px) and (orientation: portrait) {
   /* line 227, ../sass/_profile.scss */
   .feature-list p {
-    font-size: 18px;
+    font-size: clamp(15px, 2vw, 18px);
   }
 }
 @media screen and (min-width: 980px) {
@@ -4321,7 +4321,7 @@ header .menu span:nth-child(4) {
 @media screen and (max-width: 979px) {
   /* line 73, ../sass/_menu-full.scss */
   .menu-full .interaction > span {
-    font-size: 24px;
+    font-size: clamp(18px, 2.8vw, 24px);
   }
 }
 /* line 82, ../sass/_menu-full.scss */
@@ -4592,13 +4592,13 @@ header .menu span:nth-child(4) {
 }
 /* line 27, ../sass/screen.scss */
 body, html {
-  font-size: 14px;
+  font-size: clamp(12px, 1vw, 14px);
 }
 @media screen and (min-width: 980px) {
   /* line 27, ../sass/screen.scss */
   body, html {
     cursor: none !important;
-    font-size: 16px;
+    font-size: clamp(14px, 1.2vw, 16px);
   }
 }
 
