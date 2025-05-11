@@ -4813,3 +4813,77 @@ body.ov-visible {
 .project:hover {
   transform: translateY(-5px);
 }
+
+
+/* Project Slide Block - Desktop Base */
+.project-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px 20px;
+  min-height: 100vh;
+}
+
+.project-title-container {
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-slide h3 {
+  margin-bottom: 2rem;
+}
+
+.project-title-big {
+  display: block;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: white;
+}
+
+.project-title-small {
+  display: block;
+  font-size: 1.1rem;
+  color: #eee;
+  margin-top: 0.5rem;
+}
+
+/* TABLET + PHONE */
+@media screen and (max-width: 1024px) {
+  .project-title-container {
+    padding: 0 20px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .project-title-big {
+    font-size: 2rem;
+    text-align: left;
+  }
+
+  .project-title-small {
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  .project-title {
+    padding: 60px 20px;
+  }
+}
+
+/* SMALL DEVICES (MOBILE) */
+@media screen and (max-width: 600px) {
+  .project-title-big {
+    font-size: 1.7rem;
+  }
+
+  .project-title-small {
+    font-size: 0.95rem;
+  }
+
+  .project-slide h3 {
+    margin-bottom: 1.2rem;
+  }
+}
