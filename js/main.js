@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     isThrottled = true;
     sections[index].scrollIntoView({ behavior: "smooth" });
     currentIndex = index;
-    setTimeout(() => { isThrottled = false; }, 1000);
+    setTimeout(() => { isThrottled = false; }, 1400);
   };
 
   window.addEventListener("wheel", (e) => {
