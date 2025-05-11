@@ -8,17 +8,20 @@ document.addEventListener("DOMContentLoaded", () => {
     isThrottled = true;
     sections[index].scrollIntoView({ behavior: "smooth" });
     currentIndex = index;
-    setTimeout(() => { isThrottled = false; }, 1400); // Увеличенная задержка
+    setTimeout(() => {
+      isThrottled = false;
+    }, 1500); // задержка больше, чтобы не перескакивать
   };
 
   window.addEventListener("wheel", (e) => {
+    e.preventDefault();
     if (isThrottled) return;
     if (e.deltaY > 0) {
       scrollToSection(currentIndex + 1);
     } else if (e.deltaY < 0) {
       scrollToSection(currentIndex - 1);
     }
-  });
+  }, { passive: false });
 
   window.addEventListener("keydown", (e) => {
     if (isThrottled) return;
