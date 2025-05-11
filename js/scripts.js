@@ -7347,13 +7347,36 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelector('.menu-contact')?.addEventListener('click', () => showSection('contacts'));
 });
 
-// Плавная прокрутка по якорям
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener("click", function(e) {
-    const target = document.querySelector(this.getAttribute("href"));
-    if (target) {
-      e.preventDefault();
-      target.scrollIntoView({ behavior: "smooth" });
+// === PROJECT CAROUSEL LOGIC (SCROLLING BETWEEN SLIDES) ===
+(function() {
+  const track = document.querySelector('.project-track');
+  const slides = document.querySelectorAll('.project-slide');
+  if (!track || slides.length === 0) return;
+
+  let currentIndex = 0;
+  const totalSlides = slides.length;
+
+  function updateSlidePosition() {
+    const offset = -currentIndex * window.innerWidth;
+    track.style.transform = `translateX(${offset}px)`;
+  }
+
+  let scrollDebounce = false;
+  window.addEventListener('wheel', (e) => {
+    if (scrollDebounce) return;
+    scrollDebounce = true;
+
+    if (e.deltaY > 0) {
+      currentIndex = Math.min(currentIndex + 1, totalSlides - 1);
+    } else {
+      currentIndex = Math.max(currentIndex - 1, 0);
     }
+
+    updateSlidePosition();
+
+    setTimeout(() => { scrollDebounce = false; }, 1000);
   });
-});
+
+  window.addEventListener('resize', updateSlidePosition);
+  updateSlidePosition();
+})();
