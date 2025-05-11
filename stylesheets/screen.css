@@ -4796,3 +4796,27 @@ html, body {
   left: 20px;
   z-index: 1000;
 }
+
+
+/* Project visuals */
+.project-image,
+.project-image-container {
+  width: 100%;
+  max-width: 430px;
+  box-sizing: border-box;
+}
+
+/* Title blocks */
+.project-title-small,
+.project-title-block {
+  width: auto;
+  max-width: 90%;
+  box-sizing: border-box;
+  word-break: break-word;
+}
+
+/* Prevent container overflow */
+.projects-list {
+  width: 100%;
+  box-sizing: border-box;
+}
