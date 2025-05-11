@@ -7,10 +7,10 @@
 }
 
 html, body {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Inter', 'Helvetica Neue', 'Overpass', sans-serif;
   font-size: 16px;
-  background-color: #fff;
-  color: #111;
+  background-color: #ffffff;
+  color: #000000;
   line-height: 1.6;
   scroll-behavior: smooth;
 }
@@ -413,11 +413,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 /* line 61, ../sass/_animations.scss */
 .step-1 .header-logo .name, .step-1 .header-logo .job span {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 /* line 66, ../sass/_animations.scss */
 .step-1 header .menu span {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 /* line 69, ../sass/_animations.scss */
 .step-1 header .menu span::before {
@@ -609,7 +609,7 @@ p {
 
 /* line 97, ../sass/_typo.scss */
 .white {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 /* line 101, ../sass/_typo.scss */
@@ -624,7 +624,7 @@ p {
 
 /* line 110, ../sass/_typo.scss */
 .project-title {
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: clamp(16px, 5vw, 28px); /* адаптивный размер */
   word-break: break-word; /* разрешает перенос по словам */
   text-align: center;
@@ -866,7 +866,7 @@ p {
   letter-spacing: 2px;
   font-family: "Barlow", sans-serif;
   font-size: 14px;
-  color: #FFFFFF;
+  color: #ffffff;
   border: 1px solid #FFFFFF;
   text-transform: uppercase;
   text-align: center;
@@ -889,6 +889,7 @@ p {
 /* line 29, ../sass/_buttons.scss */
 .button:hover {
   color: #000000;
+  background-color: #ffffff;
 }
 /* line 31, ../sass/_buttons.scss */
 .button:hover::after {
@@ -1840,7 +1841,7 @@ header .menu span:nth-child(4) {
 }
 /* line 53, ../sass/_projects-list.scss */
 .projects-list .project-number span {
-  color: #FFFFFF;
+  color: #ffffff;
   font-weight: 600;
   display: block;
 }
@@ -3432,7 +3433,7 @@ header .menu span:nth-child(4) {
 }
 /* line 180, ../sass/_project-casestudy.scss */
 .project-casestudy .casestudy-content section-home .project-section-title {
-  color: #FFFFFF;
+  color: #ffffff;
   opacity: 0.3;
   margin-top: 20px;
   display: block;
@@ -4228,11 +4229,11 @@ header .menu span:nth-child(4) {
 }
 /* line 11, ../sass/_nav-casestudy.scss */
 .nav-casestudy p span:hover {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 /* line 16, ../sass/_nav-casestudy.scss */
 .nav-casestudy .active {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 /* line 18, ../sass/_nav-casestudy.scss */
 .nav-casestudy .active::after {
@@ -4448,7 +4449,7 @@ header .menu span:nth-child(4) {
     font-family: "Barlow", sans-serif;
     font-weight: 600;
     font-size: 1.5vw;
-    color: #FFFFFF;
+    color: #ffffff;
     position: absolute;
     top: 30px;
     left: 30px;
@@ -4476,7 +4477,7 @@ header .menu span:nth-child(4) {
     font-family: "Barlow", sans-serif;
     font-weight: 600;
     font-size: 2vw;
-    color: #FFFFFF;
+    color: #ffffff;
     z-index: 1;
     text-transform: none;
     letter-spacing: 0;
