@@ -4720,12 +4720,12 @@ body.ov-visible {
   }
 }
 
-/* ---------- FIX LOGO AGAIN ---------- */
+/* ---------- LOGO FIX (final minimal version) ---------- */
 .logo-jn {
   display: inline-block;
   height: auto;
+  max-height: 40px;
   width: auto;
-  max-height: 48px;
   max-width: 100%;
   object-fit: contain;
   vertical-align: middle;
@@ -4733,44 +4733,6 @@ body.ov-visible {
 
 @media (max-width: 768px) {
   .logo-jn {
-    max-height: 36px;
-  }
-}
-
-/* ---------- SECTION SIZING & OVERFLOW FIXES ---------- */
-.section, .content, .profile-section {
-  min-height: 100vh;
-  box-sizing: border-box;
-  overflow: hidden;
-  padding-bottom: 2rem;
-}
-
-.project-content {
-  max-width: 100%;
-  overflow-wrap: break-word;
-  word-break: break-word;
-  text-align: left;
-  padding: 1rem;
-}
-
-.project-title,
-.project-description {
-  max-width: 90vw;
-  font-size: clamp(16px, 5vw, 24px);
-  line-height: 1.4;
-  margin-bottom: 1rem;
-}
-
-@media (max-width: 768px) {
-  .project-content {
-    padding: 0 1rem;
-  }
-
-  .project-title {
-    font-size: clamp(18px, 6vw, 22px);
-  }
-
-  .project-description {
-    font-size: clamp(14px, 5vw, 18px);
+    max-height: 32px;
   }
 }
