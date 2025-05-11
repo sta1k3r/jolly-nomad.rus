@@ -4838,3 +4838,58 @@ h2, .project-title-small {
   font-size: clamp(18px, 6vw, 32px);
   line-height: 1.3;
 }
+
+/* ---------------- GRID ALIGNMENT ---------------- */
+.container, .content {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  box-sizing: border-box;
+}
+
+/* ---------------- BUTTON FIX ---------------- */
+.button, .project .button {
+  word-break: break-word;
+  white-space: normal;
+  text-align: center;
+  padding: 0.75rem 1.5rem;
+  font-size: 14px;
+}
+
+@media (max-width: 480px) {
+  .button, .project .button {
+    font-size: 12px;
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* ---------------- CITIES ANIMATION ---------------- */
+.cities-list-container {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: scrollCities 20s linear infinite;
+  width: 100%;
+}
+
+.city {
+  display: inline-block;
+  margin-right: 2rem;
+  font-size: clamp(14px, 4vw, 18px);
+}
+
+@keyframes scrollCities {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* ---------------- PROJECT DESCRIPTION ---------------- */
+.project-description {
+  font-size: clamp(14px, 4vw, 16px);
+  line-height: 1.4;
+  margin-bottom: 1rem;
+  max-width: 100%;
+  overflow-wrap: break-word;
+}
