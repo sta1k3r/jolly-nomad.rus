@@ -4728,3 +4728,62 @@ body.ov-visible {
   margin-top: 0.5rem;
 }
 
+
+
+/* --- MEDIA QUERIES FULL SET --- */
+
+/* Smartphones small (320px) */
+@media screen and (max-width: 320px) {
+  body {
+    font-size: 14px;
+  }
+
+  .project h3 {
+    font-size: 1.1rem;
+  }
+}
+
+/* Smartphones medium (375px) */
+@media screen and (max-width: 375px) {
+  .container {
+    padding: 10px;
+  }
+}
+
+/* Tablets portrait (768px) — уже включён */
+
+/* Tablets landscape and small laptops (1024px) */
+@media screen and (max-width: 1024px) {
+  .container {
+    padding: 15px;
+  }
+
+  .project {
+    padding: 1rem;
+  }
+}
+
+/* Medium desktops (1200px) */
+@media screen and (min-width: 1200px) {
+  body {
+    font-size: 17px;
+  }
+}
+
+/* Large desktops (1440px) */
+@media screen and (min-width: 1440px) {
+  .container {
+    max-width: 1360px;
+  }
+}
+
+/* Ultra-wide screens (1920px+) */
+@media screen and (min-width: 1920px) {
+  .container {
+    max-width: 1600px;
+  }
+
+  body {
+    font-size: 18px;
+  }
+}
