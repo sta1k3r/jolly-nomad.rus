@@ -517,5 +517,51 @@
 	    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.36/bundled/lenis.min.js"></script>
 	    <script type="text/javascript" src="js/scripts-enhanced.js?v=1"></script>
 	    <script src="js/project-details.js"></script>
-	</body>
+	
+<section id="about" class="section reveal" style="display: none;">
+  <div class="container">
+    <h2 class="project-title-small">Обо мне</h2>
+    <p class="big-p">Я — веб-разработчик, специализируюсь на современных сайтах и интерфейсах. Запускаю проекты, которые действительно работают.</p>
+  </div>
+</section>
+
+
+<section id="projects" class="section reveal" style="display: none;">
+  <div class="container">
+    <h2 class="project-title-small">Проекты</h2>
+    <div class="project-list">
+      <div class="project-item reveal">Проект 1 — описание</div>
+      <div class="project-item reveal">Проект 2 — описание</div>
+    </div>
+  </div>
+</section>
+
+
+<section id="contacts" class="section reveal" style="display: none;">
+  <div class="container">
+    <h2 class="project-title-small">Контакты</h2>
+    <p class="big-p">Связаться со мной можно по email: <a href="mailto:you@example.com">you@example.com</a></p>
+  </div>
+</section>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const sections = ['about', 'projects', 'contacts'];
+  sections.forEach(id => document.getElementById(id).style.display = 'none');
+
+  function showSection(id) {
+    sections.forEach(sec => {
+      document.getElementById(sec).style.display = (sec === id) ? 'block' : 'none';
+    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  document.querySelector('.menu-profile')?.addEventListener('click', () => showSection('about'));
+  document.querySelector('.menu-work')?.addEventListener('click', () => showSection('projects'));
+  document.querySelector('.menu-contact')?.addEventListener('click', () => showSection('contacts'));
+});
+</script>
+
+</body>
 </html>
