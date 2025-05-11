@@ -4765,3 +4765,85 @@ body.ov-visible {
     max-width: 90%;
   }
 }
+
+
+/* --- Logo фиксы --- */
+.header .logo {
+  max-width: 120px;
+  height: auto;
+  display: block;
+  margin-right: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .header .logo {
+    max-width: 80px;
+    margin: 0 auto 10px auto;
+  }
+}
+
+/* --- Project адаптация: иллюстрация справа, текст слева --- */
+
+.project-title-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.project-illustration {
+  flex: 1 1 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-illustration img,
+.project-image img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Tablet breakpoint: колонка */
+@media screen and (max-width: 1024px) {
+  .project-title-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .project-illustration {
+    width: 100%;
+    margin-top: 1rem;
+    order: 2;
+  }
+
+  .project-content {
+    order: 1;
+    width: 100%;
+  }
+}
+
+/* Mobile full stack */
+@media screen and (max-width: 600px) {
+  .project-title-big {
+    font-size: 2.2rem;
+    text-align: center;
+  }
+
+  .project-title-small {
+    text-align: center;
+  }
+
+  .project-illustration {
+    margin: 1rem 0;
+    text-align: center;
+  }
+
+  .project-title-container {
+    padding: 0 10px;
+  }
+}
