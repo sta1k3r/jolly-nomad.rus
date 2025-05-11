@@ -1,109 +1,30 @@
-/* line 5, ../../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+/* ========== RESET ========== */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+* {
   margin: 0;
   padding: 0;
-  border: 0;
-  font: inherit;
-  font-size: 100%;
-  vertical-align: baseline;
 }
-
-/* line 22, ../../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
-html {
-  line-height: 1;
+html, body {
+  height: 100%;
+  font-family: sans-serif;
 }
-
-/* line 24, ../../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
-ol, ul {
-  list-style: none;
-}
-
-/* line 26, ../../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-/* line 28, ../../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
-caption, th, td {
-  text-align: left;
-  font-weight: normal;
-  vertical-align: middle;
-}
-
-/* line 30, ../../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
-q, blockquote {
-  quotes: none;
-}
-/* line 103, ../../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
-q:before, q:after, blockquote:before, blockquote:after {
-  content: "";
-  content: none;
-}
-
-/* line 32, ../../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
-a img {
-  border: none;
-}
-
-/* line 116, ../../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
-article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+img, picture, video, canvas, svg {
   display: block;
+  max-width: 100%;
+}
+button, input, textarea, select {
+  font: inherit;
 }
 
-/* overpass-300 - latin */
-@font-face {
-  font-family: 'Overpass';
-  font-style: normal;
-  font-weight: 300;
-  src: local("Overpass Light"), local("Overpass-Light"), url("../fonts/overpass-v3-latin-300.woff2") format("woff2"), url("../fonts/overpass-v3-latin-300.woff") format("woff");
-  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-/* overpass-regular - latin */
-@font-face {
-  font-family: 'Overpass';
-  font-style: normal;
-  font-weight: 400;
-  src: local("Overpass Regular"), local("Overpass-Regular"), url("../fonts/overpass-v3-latin-regular.woff2") format("woff2"), url("../fonts/overpass-v3-latin-regular.woff") format("woff");
-  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-/* overpass-600 - latin */
-@font-face {
-  font-family: 'Overpass';
-  font-style: normal;
-  font-weight: 600;
-  src: local("Overpass SemiBold"), local("Overpass-SemiBold"), url("../fonts/overpass-v3-latin-600.woff2") format("woff2"), url("../fonts/overpass-v3-latin-600.woff") format("woff");
-  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-/* barlow-regular - latin */
-@font-face {
-  font-family: 'Barlow';
-  font-style: normal;
-  font-weight: 400;
-  src: local("Barlow Regular"), local("Barlow-Regular"), url("../fonts/barlow-v3-latin-regular.woff2") format("woff2"), url("../fonts/barlow-v3-latin-regular.woff") format("woff");
-  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-/* barlow-600 - latin */
-@font-face {
-  font-family: 'Barlow';
-  font-style: normal;
-  font-weight: 600;
-  src: local("Barlow SemiBold"), local("Barlow-SemiBold"), url("../fonts/barlow-v3-latin-600.woff2") format("woff2"), url("../fonts/barlow-v3-latin-600.woff") format("woff");
-  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-/* line 3, ../sass/_animations.scss */
+/* ========== ОБЩИЕ СТИЛИ ========== */
+
+/* ========== HEADER ========== */
+
+/* ========== PROJECTS ========== */
+
+/* ========== MEDIA QUERIES ========== */
 .project-1 .project-background-container {
   transform: translate3d(0, -100vh, 0);
 }
@@ -4713,4 +4634,3 @@ body.ov-visible {
   font-size: 1.1rem;
   margin-top: 0.5rem;
 }
-
