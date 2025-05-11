@@ -369,11 +369,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 
 /* line 48, ../sass/_animations.scss */
-.step-1 .header-logo .logo-jn {
+.step-1 .header-logo .logo-black {
   opacity: 0;
 }
 /* line 52, ../sass/_animations.scss */
-.step-1 .header-logo .logo-jn {
+.step-1 .header-logo .logo-white {
   opacity: 1;
 }
 /* line 57, ../sass/_animations.scss */
@@ -1373,7 +1373,7 @@ header .container {
   transition: 0.3s 0.5s background cubic-bezier(0.91, 0.03, 0.12, 1), box-shadow 1s cubic-bezier(0.91, 0.03, 0.12, 1);
 }
 /* line 30, ../sass/_header.scss */
-.header-logo .logo-jn, .header-logo {
+.header-logo .logo-black, .header-logo .logo-white {
   position: absolute;
   top: 0;
   left: 0;
@@ -1382,7 +1382,7 @@ header .container {
   transition: 0.3s 0.5s opacity cubic-bezier(0.91, 0.03, 0.12, 1);
 }
 /* line 39, ../sass/_header.scss */
-.header-logo .logo-jn {
+.header-logo .logo-white {
   opacity: 0;
 }
 /* line 44, ../sass/_header.scss */
