@@ -4827,3 +4827,51 @@ section {
   transform: none;
   transition: none;
 }
+
+/* Адаптация project-details */
+@media (max-width: 768px) {
+  .project-details {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+  }
+  .project {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+}
+
+/* Блок 'города', бегущая строка */
+.cities-list-container {
+  white-space: nowrap;
+  overflow: hidden;
+  box-sizing: border-box;
+  animation: scrollCities 20s linear infinite;
+}
+
+.city {
+  display: inline-block;
+  margin-right: 2rem;
+  font-size: clamp(14px, 4vw, 18px);
+  color: #444;
+}
+
+@keyframes scrollCities {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Адаптация профиля и контактов (исправление наложений) */
+.profile .content,
+.contact .content {
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .profile .content,
+  .contact .content {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
