@@ -28,6 +28,14 @@ img {
   padding: 20px;
 }
 
+.step {
+  scroll-snap-align: start;
+}
+#scroll-container {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+}
 
 /* line 5, ../../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
