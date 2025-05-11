@@ -43,6 +43,13 @@ table {
   object-fit: contain;
 }
 
+@media (max-width: 600px) {
+  .header-logo .logo {
+    width: 40px;
+    height: 40px;
+  }
+}
+
 .reveal {
   opacity: 0;
   transform: translateY(20px);
