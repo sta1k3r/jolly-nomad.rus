@@ -656,7 +656,7 @@ p {
   /* line 118, ../sass/_typo.scss */
   .project-title-big {
     font-size: 5vw;
-    margin-top: -0.5vw;
+    margin-top: 0vw;
     line-height: 11.9vw;
   }
 }
