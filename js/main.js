@@ -1,41 +1,34 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const sections = document.querySelectorAll(".step");
+  const sections = Array.from(document.querySelectorAll(".step, #about, #contact")); // расширяем список
   let currentIndex = 0;
   let isThrottled = false;
 
   const scrollToSection = (index) => {
     if (index < 0 || index >= sections.length) return;
     isThrottled = true;
-    sections[index].scrollIntoView({ behavior: "smooth" });
+    sections[index].scrollIntoView({ behavior: "smooth", block: "start" });
     currentIndex = index;
     setTimeout(() => {
       isThrottled = false;
-    }, 1500); // задержка больше, чтобы не перескакивать
+    }, 1200); // немного меньше задержка, но плавно
   };
 
   window.addEventListener("wheel", (e) => {
     e.preventDefault();
     if (isThrottled) return;
-    if (e.deltaY > 0) {
-      scrollToSection(currentIndex + 1);
-    } else if (e.deltaY < 0) {
-      scrollToSection(currentIndex - 1);
-    }
+    e.deltaY > 0 ? scrollToSection(currentIndex + 1) : scrollToSection(currentIndex - 1);
   }, { passive: false });
 
   window.addEventListener("keydown", (e) => {
     if (isThrottled) return;
-    if (e.key === "ArrowDown") {
-      scrollToSection(currentIndex + 1);
-    } else if (e.key === "ArrowUp") {
-      scrollToSection(currentIndex - 1);
-    }
+    if (e.key === "ArrowDown") scrollToSection(currentIndex + 1);
+    if (e.key === "ArrowUp") scrollToSection(currentIndex - 1);
   });
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        currentIndex = [...sections].indexOf(entry.target);
+        currentIndex = sections.indexOf(entry.target);
       }
     });
   }, { threshold: 0.6 });
