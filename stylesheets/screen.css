@@ -1,66 +1,3 @@
-
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Arial', sans-serif;
-  background: #fff;
-  color: #111;
-  line-height: 1.6;
-  font-size: 16px;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Container */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-/* Grid for Projects */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
-}
-
-.project {
-  background-color: #f5f5f5;
-  padding: 1.5rem;
-  border-radius: 8px;
-  transition: transform 0.3s ease;
-}
-.project:hover {
-  transform: translateY(-5px);
-}
-
-/* Scroll animation */
-.fade-in {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-.fade-in.in-view {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Responsive */
-@media screen and (max-width: 768px) {
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-}
 /* line 5, ../../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -1078,7 +1015,9 @@ p {
 }
 
 /* line 57, ../sass/_layout.scss */
-
+.no-margin-right {
+  margin-right: 0 !important;
+}
 
 /* line 61, ../sass/_layout.scss */
 .overflow-hidden {
@@ -1144,14 +1083,8 @@ p {
 @media screen and (max-width: 979px) {
   /* line 112, ../sass/_layout.scss */
   .hide-tablet {
-  display: inline;
-}
-
-@media screen and (max-width: 1024px) {
-  .hide-tablet {
     display: none;
   }
-}
 }
 @media screen and (min-width: 980px) {
   /* line 118, ../sass/_layout.scss */
@@ -1171,7 +1104,9 @@ p {
 }
 
 /* line 130, ../sass/_layout.scss */
-.col-s-1, .col-s-2, .col-s-3, 
+.col-s-1, .col-s-2, .col-s-3, .col-s-4 {
+  margin-right: 7.4vw;
+}
 
 /* line 134, ../sass/_layout.scss */
 .col-s-offset-1 {
@@ -1179,20 +1114,30 @@ p {
 }
 
 /* line 138, ../sass/_layout.scss */
-
+.col-s-1 {
+  width: 15.75vw;
+}
 
 /* line 139, ../sass/_layout.scss */
-
+.col-s-2 {
+  width: calc( 15.75vw*2 + 7.4vw);
+}
 
 /* line 140, ../sass/_layout.scss */
-
+.col-s-3 {
+  width: calc( 15.75vw*3 + 7.4vw*2);
+}
 
 /* line 141, ../sass/_layout.scss */
-
+.col-s-4 {
+  width: calc( 15.75vw*4 + 7.4vw*3);
+}
 
 @media screen and (min-width: 600px) {
   /* line 144, ../sass/_layout.scss */
-  .col-m-1, .col-m-2, .col-m-3, .col-m-4, .col-m-5, .col-m-6, .col-m-7, .col-m-8, .col-m-9, .col-m-10, .col-m-11, 
+  .col-m-1, .col-m-2, .col-m-3, .col-m-4, .col-m-5, .col-m-6, .col-m-7, .col-m-8, .col-m-9, .col-m-10, .col-m-11, .col-m-12 {
+    margin-right: 2.6vw;
+  }
 
   /* line 148, ../sass/_layout.scss */
   .col-m-offset-1 {
@@ -1200,40 +1145,64 @@ p {
   }
 
   /* line 152, ../sass/_layout.scss */
-  
+  .col-m-1 {
+    width: 5.5vw;
+  }
 
   /* line 153, ../sass/_layout.scss */
-  
+  .col-m-2 {
+    width: calc( 5.5vw*2 + 2.6vw);
+  }
 
   /* line 154, ../sass/_layout.scss */
-  
+  .col-m-3 {
+    width: calc( 5.5vw*3 + 2.6vw*2);
+  }
 
   /* line 155, ../sass/_layout.scss */
-  
+  .col-m-4 {
+    width: calc( 5.5vw*4 + 2.6vw*3);
+  }
 
   /* line 156, ../sass/_layout.scss */
-  
+  .col-m-5 {
+    width: calc( 5.5vw*5 + 2.6vw*4);
+  }
 
   /* line 157, ../sass/_layout.scss */
-  
+  .col-m-6 {
+    width: calc( 5.5vw*6 + 2.6vw*5);
+  }
 
   /* line 158, ../sass/_layout.scss */
-  
+  .col-m-7 {
+    width: calc( 5.5vw*7 + 2.6vw*6);
+  }
 
   /* line 159, ../sass/_layout.scss */
-  
+  .col-m-8 {
+    width: calc( 5.5vw*8 + 2.6vw*7);
+  }
 
   /* line 160, ../sass/_layout.scss */
-  
+  .col-m-9 {
+    width: calc( 5.5vw*9 + 2.6vw*8);
+  }
 
   /* line 161, ../sass/_layout.scss */
-  
+  .col-m-10 {
+    width: calc( 5.5vw*10 + 2.6vw*9);
+  }
 
   /* line 162, ../sass/_layout.scss */
-  
+  .col-m-11 {
+    width: calc( 5.5vw*11 + 2.6vw*10);
+  }
 
   /* line 163, ../sass/_layout.scss */
-  
+  .col-m-12 {
+    width: calc( 5.5vw*12 + 2.6vw*11);
+  }
 }
 @media screen and (min-width: 980px) {
   /* line 167, ../sass/_layout.scss */
@@ -4062,7 +4031,9 @@ header .menu span:nth-child(4) {
 }
 @media screen and (max-width: 599px) {
   /* line 23, ../sass/_project-cic.scss */
-  .section-user-experience .user-experience-step > div
+  .section-user-experience .user-experience-step > div.col-s-4 {
+    margin-right: 0;
+  }
 }
 @media screen and (min-width: 600px) {
   /* line 18, ../sass/_project-cic.scss */
@@ -4292,10 +4263,15 @@ header .menu span:nth-child(4) {
   }
 }
 /* line 38, ../sass/_menu-full.scss */
-.menu-full 
+.menu-full .interaction {
+  position: relative;
+  width: 0;
+}
 @media screen and (max-width: 979px) {
   /* line 38, ../sass/_menu-full.scss */
-  .menu-full 
+  .menu-full .interaction {
+    margin: 30px 18%;
+  }
 }
 /* line 45, ../sass/_menu-full.scss */
 .menu-full .interaction.menu-hi {
@@ -4367,11 +4343,15 @@ header .menu span:nth-child(4) {
 }
 @media screen and (max-width: 979px) {
   /* line 101, ../sass/_menu-full.scss */
-  .menu-full.visible 
+  .menu-full.visible .interaction {
+    width: 66%;
+  }
 }
 @media screen and (min-width: 980px) {
   /* line 101, ../sass/_menu-full.scss */
-  .menu-full.visible 
+  .menu-full.visible .interaction {
+    width: calc( 5.5vw*2 + 2.6vw);
+  }
 }
 /* line 110, ../sass/_menu-full.scss */
 .menu-full.visible .interaction.menu-hi {
@@ -4709,13 +4689,13 @@ body.ov-visible {
 
 /* Планшеты */
 @media screen and (max-width: 980px) {
-  
+  .col-m-10 { width: 83.33333%; }
   .col-m-offset-1 { margin-left: 8.33333%; }
 }
 
 /* Мобильные */
 @media screen and (max-width: 480px) {
-  
+  .col-s-4 { width: 100%; }
   .col-s-offset-0 { margin-left: 0; }
 }
 
@@ -4736,154 +4716,52 @@ body.ov-visible {
 
 
 
-/* --- MEDIA QUERIES FULL SET --- */
+/* --- Адаптация project-title блоков --- */
 
-/* Smartphones small (320px) */
-@media screen and (max-width: 320px) {
-  body {
-    font-size: 14px;
-  }
-
-  .project h3 {
-    font-size: 1.1rem;
-  }
-}
-
-/* Smartphones medium (375px) */
-@media screen and (max-width: 375px) {
-  .container {
-    padding: 10px;
-  }
-}
-
-/* Tablets portrait (768px) — уже включён */
-
-/* Tablets landscape and small laptops (1024px) */
-@media screen and (max-width: 1024px) {
-  .container {
-    padding: 15px;
-  }
-
-  .project {
-    padding: 1rem;
-  }
-}
-
-/* Medium desktops (1200px) */
-@media screen and (min-width: 1200px) {
-  body {
-    font-size: 17px;
-  }
-}
-
-/* Large desktops (1440px) */
-@media screen and (min-width: 1440px) {
-  .container {
-    max-width: 1360px;
-  }
-}
-
-/* Ultra-wide screens (1920px+) */
-@media screen and (min-width: 1920px) {
-  .container {
-    max-width: 1600px;
-  }
-
-  body {
-    font-size: 18px;
-  }
-}
-
-
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.project {
-  background-color: #f8f8f8;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease;
-}
-
-.project:hover {
-  transform: translateY(-5px);
-}
-
-
-/* Project Slide Block - Desktop Base */
-.project-title {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 40px 20px;
-  min-height: 100vh;
-}
-
-.project-title-container {
-  max-width: 100%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.project-slide h3 {
-  margin-bottom: 2rem;
-}
-
-.project-title-big {
-  display: block;
-  font-size: 3.5rem;
-  font-weight: 700;
-  color: white;
-}
-
-.project-title-small {
-  display: block;
-  font-size: 1.1rem;
-  color: #eee;
-  margin-top: 0.5rem;
-}
-
-/* TABLET + PHONE */
-@media screen and (max-width: 1024px) {
-  .project-title-container {
-    padding: 0 20px;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
+/* Smartphones - до 599px */
+@media screen and (max-width: 599px) {
   .project-title-big {
-    font-size: 2rem;
-    text-align: left;
+    font-size: 2.2rem;
+    line-height: 1.2;
+    margin-top: 1rem;
+    text-align: center;
   }
 
   .project-title-small {
     font-size: 1rem;
-    text-align: left;
+    text-align: center;
+    margin-top: 0.5rem;
   }
 
-  .project-title {
-    padding: 60px 20px;
+  .project-title-container {
+    padding: 0 20px;
+  }
+
+  .projects-list .project-number {
+    font-size: 1rem;
+    text-align: center;
+    margin: 1rem auto 0 auto;
+  }
+
+  .projects-list .project-title {
+    height: auto;
+    margin-top: 2vh;
   }
 }
 
-/* SMALL DEVICES (MOBILE) */
-@media screen and (max-width: 600px) {
+/* Tablets - до 980px */
+@media screen and (max-width: 980px) {
   .project-title-big {
-    font-size: 1.7rem;
+    font-size: 3rem;
+    line-height: 1.3;
   }
 
   .project-title-small {
-    font-size: 0.95rem;
+    font-size: 1.2rem;
+    margin-top: 0.6rem;
   }
 
-  .project-slide h3 {
-    margin-bottom: 1.2rem;
+  .project-title-container {
+    max-width: 90%;
   }
 }
