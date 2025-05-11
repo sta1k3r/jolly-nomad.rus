@@ -4815,3 +4815,69 @@ html, body {
   width: 100%;
   box-sizing: border-box;
 }
+
+.project-step {
+  padding: 4vw 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.project-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.project-title-block {
+  flex: 1 1 500px;
+  max-width: 600px;
+}
+
+.project-title-big {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  margin: 0 0 1rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.project-title-small {
+  font-size: clamp(1rem, 2vw, 1.6rem);
+  color: #ddd;
+  margin-bottom: 2rem;
+}
+
+.project-title-block .button {
+  margin-top: 1.5rem;
+}
+
+.project-image {
+  flex: 1 1 400px;
+  text-align: right;
+}
+
+.project-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Адаптив */
+@media screen and (max-width: 768px) {
+  .project-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .project-image {
+    order: -1;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .project-title-block {
+    max-width: 100%;
+  }
+}
