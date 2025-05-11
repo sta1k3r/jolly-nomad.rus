@@ -7328,3 +7328,21 @@ function initScrollAnimations() {
 document.addEventListener("DOMContentLoaded", () => {
   initScrollAnimations();
 });
+
+// Переключение секций при клике по меню
+document.addEventListener("DOMContentLoaded", function () {
+  const sections = ['about', 'projects', 'contacts'];
+  function showSection(id) {
+    sections.forEach(sec => {
+      const el = document.getElementById(sec);
+      if (el) {
+        el.style.display = (sec === id) ? 'block' : 'none';
+      }
+    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  document.querySelector('.menu-profile')?.addEventListener('click', () => showSection('about'));
+  document.querySelector('.menu-work')?.addEventListener('click', () => showSection('projects'));
+  document.querySelector('.menu-contact')?.addEventListener('click', () => showSection('contacts'));
+});
