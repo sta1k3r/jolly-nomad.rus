@@ -7346,3 +7346,14 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelector('.menu-work')?.addEventListener('click', () => showSection('projects'));
   document.querySelector('.menu-contact')?.addEventListener('click', () => showSection('contacts'));
 });
+
+// Плавная прокрутка по якорям
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener("click", function(e) {
+    const target = document.querySelector(this.getAttribute("href"));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: "smooth" });
+    }
+  });
+});
