@@ -1,6 +1,6 @@
 
 document.addEventListener("DOMContentLoaded", () => {
-  const sections = document.querySelectorAll(".step");
+  const sections = document.querySelectorAll(".project-step, .step");
   let currentIndex = 0;
   let isThrottled = false;
 
@@ -21,7 +21,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Optional: arrow key support
   window.addEventListener("keydown", (e) => {
     if (isThrottled) return;
     if (e.key === "ArrowDown") {
@@ -31,7 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Highlight active section on enter view
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
