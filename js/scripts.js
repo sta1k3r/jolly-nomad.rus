@@ -7298,3 +7298,33 @@ window.onload = function(e) {
         })
 }
 ;
+
+// Lenis.js — плавный скролл
+const lenis = new Lenis({
+  smooth: true,
+  lerp: 0.1
+});
+
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+requestAnimationFrame(raf);
+
+// Scroll Reveal (появление блоков при прокрутке)
+function initScrollAnimations() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("in-view");
+        observer.unobserve(entry.target);
+      }
+    });
+  });
+
+  document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  initScrollAnimations();
+});
