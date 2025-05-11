@@ -4797,3 +4797,75 @@ body.ov-visible {
 html, body {
   overflow-x: hidden;
 }
+
+/* --- ЛОГОТИП --- */
+.header-logo .logo {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
+}
+@media screen and (min-width: 600px) {
+  .header-logo .logo {
+    width: 50px;
+    height: 50px;
+  }
+}
+@media screen and (min-width: 980px) {
+  .header-logo .logo {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+/* --- Блоки "Обо мне" и профили: корректный отступ и адаптация --- */
+.profile-scroll-container {
+  padding: 10vh 5vw;
+  box-sizing: border-box;
+}
+
+/* --- Адаптивность заголовков проектов --- */
+.project-title-big {
+  font-size: clamp(32px, 10vw, 120px);
+  line-height: 1.1;
+}
+.project-title-small {
+  font-size: clamp(14px, 4vw, 32px);
+  line-height: 1.4;
+}
+
+/* --- Бегущая строка: фиксация горизонтального направления и overflow --- */
+.marquee {
+  white-space: nowrap;
+  overflow-x: hidden;
+  animation: marquee 15s linear infinite;
+  display: flex;
+}
+@keyframes marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* --- Проекты: корректное поведение на мобильных --- */
+.projects-list .project-title-container {
+  text-align: center;
+}
+.projects-list .project-title h2 {
+  font-size: clamp(24px, 6vw, 60px);
+  text-align: center;
+  line-height: 1.2;
+}
+
+/* --- Мелкие исправления --- */
+.scroll-down {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3vh;
+}
+
+/* Гарантированная адаптация текста в блоках */
+p, .big-p, .subtitle {
+  word-break: break-word;
+  hyphens: auto;
+}
