@@ -1144,8 +1144,14 @@ p {
 @media screen and (max-width: 979px) {
   /* line 112, ../sass/_layout.scss */
   .hide-tablet {
+  display: inline;
+}
+
+@media screen and (max-width: 1024px) {
+  .hide-tablet {
     display: none;
   }
+}
 }
 @media screen and (min-width: 980px) {
   /* line 118, ../sass/_layout.scss */
