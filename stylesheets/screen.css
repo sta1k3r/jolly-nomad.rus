@@ -7,10 +7,10 @@
 }
 
 html, body {
-  font-family: 'Inter', 'Helvetica Neue', 'Overpass', sans-serif;
+  font-family: 'Arial', sans-serif;
   font-size: 16px;
-  background-color: #ffffff;
-  color: #000000;
+  background-color: #fff;
+  color: #111;
   line-height: 1.6;
   scroll-behavior: smooth;
 }
@@ -413,11 +413,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 /* line 61, ../sass/_animations.scss */
 .step-1 .header-logo .name, .step-1 .header-logo .job span {
-  color: #ffffff;
+  color: #FFFFFF;
 }
 /* line 66, ../sass/_animations.scss */
 .step-1 header .menu span {
-  color: #ffffff;
+  color: #FFFFFF;
 }
 /* line 69, ../sass/_animations.scss */
 .step-1 header .menu span::before {
@@ -609,7 +609,7 @@ p {
 
 /* line 97, ../sass/_typo.scss */
 .white {
-  color: #ffffff;
+  color: #FFFFFF;
 }
 
 /* line 101, ../sass/_typo.scss */
@@ -624,7 +624,7 @@ p {
 
 /* line 110, ../sass/_typo.scss */
 .project-title {
-  color: #ffffff;
+  color: #FFFFFF;
   font-size: clamp(16px, 5vw, 28px); /* адаптивный размер */
   word-break: break-word; /* разрешает перенос по словам */
   text-align: center;
@@ -866,7 +866,7 @@ p {
   letter-spacing: 2px;
   font-family: "Barlow", sans-serif;
   font-size: 14px;
-  color: #ffffff;
+  color: #FFFFFF;
   border: 1px solid #FFFFFF;
   text-transform: uppercase;
   text-align: center;
@@ -889,7 +889,6 @@ p {
 /* line 29, ../sass/_buttons.scss */
 .button:hover {
   color: #000000;
-  background-color: #ffffff;
 }
 /* line 31, ../sass/_buttons.scss */
 .button:hover::after {
@@ -1841,7 +1840,7 @@ header .menu span:nth-child(4) {
 }
 /* line 53, ../sass/_projects-list.scss */
 .projects-list .project-number span {
-  color: #ffffff;
+  color: #FFFFFF;
   font-weight: 600;
   display: block;
 }
@@ -3433,7 +3432,7 @@ header .menu span:nth-child(4) {
 }
 /* line 180, ../sass/_project-casestudy.scss */
 .project-casestudy .casestudy-content section-home .project-section-title {
-  color: #ffffff;
+  color: #FFFFFF;
   opacity: 0.3;
   margin-top: 20px;
   display: block;
@@ -4229,11 +4228,11 @@ header .menu span:nth-child(4) {
 }
 /* line 11, ../sass/_nav-casestudy.scss */
 .nav-casestudy p span:hover {
-  color: #ffffff;
+  color: #FFFFFF;
 }
 /* line 16, ../sass/_nav-casestudy.scss */
 .nav-casestudy .active {
-  color: #ffffff;
+  color: #FFFFFF;
 }
 /* line 18, ../sass/_nav-casestudy.scss */
 .nav-casestudy .active::after {
@@ -4449,7 +4448,7 @@ header .menu span:nth-child(4) {
     font-family: "Barlow", sans-serif;
     font-weight: 600;
     font-size: 1.5vw;
-    color: #ffffff;
+    color: #FFFFFF;
     position: absolute;
     top: 30px;
     left: 30px;
@@ -4477,7 +4476,7 @@ header .menu span:nth-child(4) {
     font-family: "Barlow", sans-serif;
     font-weight: 600;
     font-size: 2vw;
-    color: #ffffff;
+    color: #FFFFFF;
     z-index: 1;
     text-transform: none;
     letter-spacing: 0;
@@ -4815,95 +4814,4 @@ html, body {
 .projects-list {
   width: 100%;
   box-sizing: border-box;
-}
-
-
-
-/* ====== PROJECT SECTION: ADAPTIVE ====== */
-
-/* Общая обёртка проекта */
-.project-item {
-  padding: 4vh 0;
-}
-
-/* Контент проекта */
-.project-content {
-  flex-direction: column;
-  gap: 3vh;
-}
-@media screen and (min-width: 768px) {
-  .project-content {
-    flex-direction: row;
-    align-items: center;
-    gap: 5vw;
-  }
-}
-
-/* Текстовая часть */
-.project-text {
-  width: 100%;
-  text-align: center;
-}
-@media screen and (min-width: 768px) {
-  .project-text {
-    width: 60%;
-    text-align: left;
-  }
-}
-
-/* Блок с изображением */
-.project-image {
-  width: 100%;
-  text-align: center;
-}
-@media screen and (min-width: 768px) {
-  .project-image {
-    width: 40%;
-  }
-}
-.project-image-img {
-  max-width: 100%;
-  height: auto;
-  object-fit: cover;
-  display: block;
-}
-
-/* Названия проектов */
-.project-title-big {
-  font-size: 10vw;
-}
-@media screen and (min-width: 600px) {
-  .project-title-big {
-    font-size: 6vw;
-  }
-}
-@media screen and (min-width: 980px) {
-  .project-title-big {
-    font-size: 3vw;
-  }
-}
-
-.project-title-small {
-  font-size: 4vw;
-}
-@media screen and (min-width: 600px) {
-  .project-title-small {
-    font-size: 2.5vw;
-  }
-}
-@media screen and (min-width: 980px) {
-  .project-title-small {
-    font-size: 1.5vw;
-  }
-}
-
-/* Кнопки */
-.project-button {
-  margin-top: 2vh;
-  justify-content: center;
-}
-@media screen and (min-width: 768px) {
-  .project-button {
-    justify-content: flex-start;
-  }
 }
