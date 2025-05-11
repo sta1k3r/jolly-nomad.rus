@@ -36,20 +36,6 @@ table {
   border-spacing: 0;
 }
 
-.logo-jn {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: contain;
-}
-
-@media (max-width: 600px) {
-  .header-logo .logo {
-    width: 40px;
-    height: 40px;
-  }
-}
-
 .reveal {
   opacity: 0;
   transform: translateY(20px);
@@ -4796,5 +4782,33 @@ body.ov-visible {
   .button {
     font-size: clamp(12px, 3.5vw, 16px);
     padding: 0.5rem 1rem;
+  }
+}
+
+/* ==================== LOGO ADAPTIVE FIX ==================== */
+.header-logo .logo {
+  position: relative;
+  overflow: hidden;
+  width: 5.5vw;
+  height: 5.5vw;
+  min-width: 40px;
+  min-height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-jn {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+@media (max-width: 600px) {
+  .header-logo .logo {
+    width: 40px;
+    height: 40px;
   }
 }
