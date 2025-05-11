@@ -4748,23 +4748,3 @@ body.ov-visible {
   color: #777;
   margin-top: 5px;
 }
-
-/* 📱 Адаптация под мобильные экраны */
-@media screen and (max-width: 768px) {
-  .project {
-    flex: 1 1 100%;
-  }
-
-  .projects-section {
-    padding: 20px 10px;
-    gap: 15px;
-  }
-
-  .project-title-big {
-    font-size: 5rem;
-  }
-
-  .project-title-small {
-    font-size: 0.9rem;
-  }
-}
