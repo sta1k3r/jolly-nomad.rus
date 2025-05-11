@@ -677,7 +677,7 @@ p {
   width: 100%;
   text-align: center;
   padding-right: 0.6vw;
-  margin-top: 1vw;
+  margin-top: -0.5vw;
 }
 @media screen and (min-width: 600px) {
   /* line 141, ../sass/_typo.scss */
