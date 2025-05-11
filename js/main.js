@@ -1,6 +1,5 @@
-
 document.addEventListener("DOMContentLoaded", () => {
-  const sections = document.querySelectorAll(".project-step, .step");
+  const sections = document.querySelectorAll(".step");
   let currentIndex = 0;
   let isThrottled = false;
 
@@ -9,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     isThrottled = true;
     sections[index].scrollIntoView({ behavior: "smooth" });
     currentIndex = index;
-    setTimeout(() => { isThrottled = false; }, 1400);
+    setTimeout(() => { isThrottled = false; }, 1400); // Увеличенная задержка
   };
 
   window.addEventListener("wheel", (e) => {
