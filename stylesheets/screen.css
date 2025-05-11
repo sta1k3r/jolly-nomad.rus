@@ -1424,7 +1424,7 @@ header .container {
   z-index: 3;
   width: 41px;
   height: 39px;
-  padding: 10px;
+  padding: 0.625rem;
   display: flex;
   top: calc(30px + 2.75vw - 20px);
   right: calc(7.4vw - 10px);
@@ -2201,7 +2201,7 @@ header .menu span:nth-child(4) {
 @media screen and (max-width: 599px) {
   /* line 367, ../sass/_projects-list.scss */
   .projects-list .project-button .button {
-    padding: 12px 0;
+    padding: 0.75rem 0;
     width: 120px;
   }
 }
@@ -3176,7 +3176,7 @@ header .menu span:nth-child(4) {
 }
 /* line 359, ../sass/_project.scss */
 .project-date {
-  margin: 10px 0 50px;
+  margin: 0.625rem 0 50px;
 }
 /* line 363, ../sass/_project.scss */
 .project-description {
