@@ -31,6 +31,7 @@ img {
 .step {
   scroll-snap-align: start;
 }
+
 #scroll-container {
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
