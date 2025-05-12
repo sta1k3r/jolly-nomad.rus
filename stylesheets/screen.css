@@ -612,7 +612,7 @@ p {
   display: block;
   overflow: hidden;
   line-height: 16.5vw;
-  margin-top: -1.1vw;
+  margin-top: -0.8vw;
 }
 @media screen and (min-width: 980px) {
   /* line 118, ../sass/_typo.scss */
