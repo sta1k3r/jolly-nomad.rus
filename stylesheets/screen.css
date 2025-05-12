@@ -655,6 +655,7 @@ p {
   /* line 118, ../sass/_typo.scss */
   .project-title-big {
     margin-top: -1.7vw;
+    font-size: 5vw;
   }
 }
 /* line 133, ../sass/_typo.scss */
@@ -687,7 +688,7 @@ p {
   .project-title-small {
     font-size: 2vw;
     text-align: right;
-    margin-top: -0.5vw;
+    margin-top: -3.2rem;
   }
 }
 /* line 159, ../sass/_typo.scss */
