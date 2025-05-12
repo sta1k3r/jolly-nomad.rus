@@ -1452,7 +1452,7 @@ header .container {
   transition: 0.3s 0.5s background cubic-bezier(0.91, 0.03, 0.12, 1), box-shadow 1s cubic-bezier(0.91, 0.03, 0.12, 1);
 }
 /* line 30, ../sass/_header.scss */
-.header-logo .logo-black, .header-logo .logo-white {
+.header-logo .logo-jn {
   position: absolute;
   top: 0;
   left: 0;
