@@ -634,9 +634,10 @@ p {
 
 @media screen and (max-width: 360px) {
   .project-title-big {
-    font-size: 18vw;
-    line-height: 19.5vw;
-    margin-top: -1.5vw;
+    font-size: 12vw;
+    line-height: 13.4vw;
+    margin-top: -2.7vw;
+    padding: -1.1vw;
   }
 
   .project-title-big .letter {
@@ -644,8 +645,8 @@ p {
   }
 
   .project-title-small {
-    font-size: 4vw;
-    margin-top: 1.5vw;
+    font-size: 3.9vw;
+    margin-top: 1.6vw;
     text-align: center;
   }
 
