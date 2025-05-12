@@ -1,50 +1,89 @@
-
 .project-title-big {
   font-size: clamp(38px, 12vw, 173px);
   line-height: clamp(45px, 14vw, 202px);
-  text-align: left;
 }
 
 .project-title-small {
   font-size: clamp(11px, 3.5vw, 50px);
   line-height: clamp(16px, 5vw, 72px);
-  text-align: right;
 }
 
 
 
-/* === Fallback для старых браузеров === */
-.project-title-big {
-  font-size: 38px;
-  line-height: 45px;
+/* === Layout adjustments with media === */
+@media (max-width: 319px) {
+  .project-title-big,
+  .project-title-small {
+    text-align: center;
+    margin-top: 10px;
+  }
 }
 
-.project-title-small {
-  font-size: 11px;
-  line-height: 16px;
+@media (min-width: 320px) and (max-width: 480px) {
+  .project-title-big,
+  .project-title-small {
+    text-align: center;
+  }
 }
 
-@media screen and (min-width: 600px) {
+@media (min-width: 481px) and (max-width: 768px) {
   .project-title-big {
-    font-size: 12vw;
-    line-height: 14vw;
+    text-align: left;
   }
   .project-title-small {
-    font-size: 3.5vw;
-    line-height: 5vw;
+    text-align: left;
   }
 }
 
-@media screen and (min-width: 1440px) {
+@media (min-width: 769px) and (max-width: 1023px) {
   .project-title-big {
-    font-size: 173px;
-    line-height: 202px;
+    text-align: left;
   }
   .project-title-small {
-    font-size: 50px;
-    line-height: 72px;
+    text-align: left;
   }
 }
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .project-title-big {
+    text-align: left;
+    margin-top: -10px;
+  }
+  .project-title-small {
+    text-align: right;
+  }
+}
+
+@media (min-width: 1440px) and (max-width: 1919px) {
+  .project-title-big {
+    text-align: left;
+    margin-top: -20px;
+  }
+  .project-title-small {
+    text-align: right;
+  }
+}
+
+@media (min-width: 1920px) and (max-width: 2559px) {
+  .project-title-big {
+    text-align: left;
+    margin-top: -30px;
+  }
+  .project-title-small {
+    text-align: right;
+  }
+}
+
+@media (min-width: 2560px) {
+  .project-title-big {
+    text-align: left;
+    margin-top: -40px;
+  }
+  .project-title-small {
+    text-align: right;
+  }
+}
+
 
 
 /* RESET */
