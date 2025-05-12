@@ -786,7 +786,7 @@ p {
 @media screen and (min-width: 600px) and (orientation: portrait) {
   /* line 223, ../sass/_typo.scss */
   .big-p {
-    font-size: 4vw;
+    font-size: 7vw;
   }
 }
 @media screen and (min-width: 1500px) {
@@ -4859,29 +4859,9 @@ html, body {
   }
 }
 
-/* === Full HD до 1920px === */
-@media (min-width: 1440px) and (max-width: 1920px) {
-  .project-title-big {
-    font-size: 3.8vw;
-    line-height: 15vw;
-    text-align: left;
-  }
-  .project-title-small {
-    font-size: 1.6vw;
-    text-align: right;
-  }
-}
 
-/* === 4K и выше === */
-@media (min-width: 2560px) {
-  .project-title-big {
-    font-size: 3vw;
-    line-height: 13vw;
-  }
-  .project-title-small {
-    font-size: 1.2vw;
-  }
-}
+
+
 
 /* === ДОПОЛНИТЕЛЬНЫЕ МЕДИАЗАПРОСЫ === */
 
@@ -4922,27 +4902,9 @@ html, body {
   }
 }
 
-/* Full HD 1440px–1920px */
-@media (min-width: 1440px) and (max-width: 1920px) {
-  .project-title-big {
-    font-size: 3.8vw;
-    line-height: 5vw;
-  }
-  .project-title-small {
-    font-size: 1.6vw;
-  }
-}
 
-/* 4K и выше */
-@media (min-width: 2560px) {
-  .project-title-big {
-    font-size: 3vw;
-    line-height: 13vw;
-  }
-  .project-title-small {
-    font-size: 1.2vw;
-  }
-}
+
+
 
 /* Scroll Snap Section */
 .step {
@@ -4954,24 +4916,39 @@ body, html {
 }
 
 
-/* === Mobile adaptation for cities block === */
+/* === ДОПОЛНЕННЫЕ МЕДИАЗАПРОСЫ === */
 
-@media (max-width: 480px) {
-  .cities-list-container {
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    gap: 8px;
+/* < 320px */
+@media (max-width: 319px) {
+  .project-title-big {
+    font-size: 11vw;
+    line-height: 13vw;
+    text-align: center;
   }
-
-  .city {
-    font-size: 4.8vw;
-    white-space: nowrap;
-    padding: 2px 8px;
+  .project-title-small {
+    font-size: 3.3vw;
+    text-align: center;
   }
+}
 
-  .subtitle {
-    display: block;
-    margin-bottom: 12px;
-    font-size: 3.8vw;
+/* 1921px–2559px (2K) */
+@media (min-width: 1921px) and (max-width: 2559px) {
+  .project-title-big {
+    font-size: 3.5vw;
+    line-height: 11vw;
+  }
+  .project-title-small {
+    font-size: 1.5vw;
+  }
+}
+
+/* 2560px+ (4K+) */
+@media (min-width: 2560px) {
+  .project-title-big {
+    font-size: 3vw;
+    line-height: 13vw;
+  }
+  .project-title-small {
+    font-size: 1.2vw;
   }
 }
