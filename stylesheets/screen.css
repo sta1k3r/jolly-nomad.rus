@@ -654,9 +654,7 @@ p {
 @media screen and (min-width: 980px) {
   /* line 118, ../sass/_typo.scss */
   .project-title-big {
-    font-size: 5vw;
     margin-top: -1.7vw;
-    line-height: 13.2vw;
   }
 }
 /* line 133, ../sass/_typo.scss */
@@ -4848,12 +4846,13 @@ html, body {
 /* === Десктопы от 980px до Full HD === */
 @media (min-width: 980px) and (max-width: 1439px) {
   .project-title-big {
-    font-size: 4.2vw;
-    line-height: 5.4vw;
+    font-size: 5vw;
+    line-height: 1.8vw;
     text-align: left;
+    line-height: 12.2vw;
   }
   .project-title-small {
-    font-size: 1.8vw;
+    font-size: 1.4vw;
     text-align: right;
   }
 }
