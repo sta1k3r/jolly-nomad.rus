@@ -137,6 +137,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 .project-1 .project-background-container {
   transform: translate3d(0, -100vh, 0);
 }
+
+@media screen and (max-width: 979px) {
+  .project-image-container {
+    transform: none !important;
+  }
+}
 /* line 7, ../sass/_animations.scss */
 .project-1 .project-image-container {
   transform: translate3d(0, -56.8vw, 0);
