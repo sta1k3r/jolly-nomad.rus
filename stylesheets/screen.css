@@ -1,91 +1,3 @@
-.project-title-big {
-  font-size: clamp(38px, 12vw, 173px);
-  line-height: clamp(45px, 14vw, 202px);
-}
-
-.project-title-small {
-  font-size: clamp(11px, 3.5vw, 50px);
-  line-height: clamp(16px, 5vw, 72px);
-}
-
-
-
-/* === Layout adjustments with media === */
-@media (max-width: 319px) {
-  .project-title-big,
-  .project-title-small {
-    text-align: center;
-    margin-top: 10px;
-  }
-}
-
-@media (min-width: 320px) and (max-width: 480px) {
-  .project-title-big,
-  .project-title-small {
-    text-align: center;
-  }
-}
-
-@media (min-width: 481px) and (max-width: 768px) {
-  .project-title-big {
-    text-align: left;
-  }
-  .project-title-small {
-    text-align: left;
-  }
-}
-
-@media (min-width: 769px) and (max-width: 1023px) {
-  .project-title-big {
-    text-align: left;
-  }
-  .project-title-small {
-    text-align: left;
-  }
-}
-
-@media (min-width: 1024px) and (max-width: 1439px) {
-  .project-title-big {
-    text-align: left;
-    margin-top: -10px;
-  }
-  .project-title-small {
-    text-align: right;
-  }
-}
-
-@media (min-width: 1440px) and (max-width: 1919px) {
-  .project-title-big {
-    text-align: left;
-    margin-top: -20px;
-  }
-  .project-title-small {
-    text-align: right;
-  }
-}
-
-@media (min-width: 1920px) and (max-width: 2559px) {
-  .project-title-big {
-    text-align: left;
-    margin-top: -30px;
-  }
-  .project-title-small {
-    text-align: right;
-  }
-}
-
-@media (min-width: 2560px) {
-  .project-title-big {
-    text-align: left;
-    margin-top: -40px;
-  }
-  .project-title-small {
-    text-align: right;
-  }
-}
-
-
-
 /* RESET */
 * {
   margin: 0;
@@ -731,10 +643,20 @@ p {
   display: inline-block;
 }
 /* line 118, ../sass/_typo.scss */
-
+.project-title-big {
+  font-size: 12vw;
+  font-weight: 600;
+  display: block;
+  overflow: hidden;
+  line-height: 16.4vw;
+  margin-top: -2.4vw;
+}
 @media screen and (min-width: 980px) {
   /* line 118, ../sass/_typo.scss */
-  
+  .project-title-big {
+    margin-top: -1.7vw;
+    font-size: 5vw;
+  }
 }
 /* line 133, ../sass/_typo.scss */
 .project-title-big .letter {
@@ -747,14 +669,27 @@ p {
   }
 }
 /* line 141, ../sass/_typo.scss */
-
+.project-title-small {
+  font-size: 3.5vw;
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding-right: 0.6vw;
+  margin-top: -0.5vw;
+}
 @media screen and (min-width: 600px) {
   /* line 141, ../sass/_typo.scss */
-  
+  .project-title-small {
+    font-size: 2.8vw;
+  }
 }
 @media screen and (min-width: 980px) {
   /* line 141, ../sass/_typo.scss */
-  
+  .project-title-small {
+    font-size: 2vw;
+    text-align: right;
+    margin-top: -3.2rem;
+  }
 }
 /* line 159, ../sass/_typo.scss */
 .project-title-small .letter {
@@ -2415,7 +2350,7 @@ header .menu span:nth-child(4) {
 .profile-section {
   position: relative;
   height: 20%;
-  width: 100%;
+  width: 80%;
 }
 @media screen and (min-width: 600px) {
   /* line 30, ../sass/_profile.scss */
@@ -4797,7 +4732,14 @@ body.ov-visible {
   word-wrap: break-word;
   overflow-wrap: break-word;
 }
-
+.project-title-small {
+  max-width: 500px;
+  line-height: 1.4;
+  display: block;
+  word-break: break-word;
+  font-size: 1rem;
+  margin-top: 0.8rem;
+}
 
 
 
@@ -4873,4 +4815,140 @@ html, body {
 .projects-list {
   width: 100%;
   box-sizing: border-box;
+}
+
+/* === ДОПОЛНИТЕЛЬНЫЕ МЕДИАЗАПРОСЫ === */
+/* === ДО 360px === */
+@media (max-width: 360px) {
+  .project-title-big {
+    font-size: 12vw;
+    line-height: 14vw;
+    text-align: center;
+  }
+  .project-title-small {
+    font-size: 3.5vw;
+    text-align: center;
+  }
+}
+
+/* === 768px — типовой планшет === */
+@media (min-width: 600px) and (max-width: 979px) {
+  .project-title-big {
+    font-size: 7.5vw;
+    line-height: 17vw;
+    text-align: left;
+  }
+  .project-title-small {
+    font-size: 2.5vw;
+    text-align: left;
+  }
+}
+
+/* === Десктопы от 980px до Full HD === */
+@media (min-width: 980px) and (max-width: 1439px) {
+  .project-title-big {
+    font-size: 5vw;
+    line-height: 1.8vw;
+    text-align: left;
+    line-height: 12.2vw;
+    margin-top: -16px;
+  }
+  .project-title-small {
+    font-size: 1.4vw;
+    text-align: right;
+  }
+}
+
+/* === Full HD до 1920px === */
+@media (min-width: 1440px) and (max-width: 1920px) {
+  .project-title-big {
+    font-size: 3.8vw;
+    line-height: 15vw;
+    text-align: left;
+  }
+  .project-title-small {
+    font-size: 1.6vw;
+    text-align: right;
+  }
+}
+
+/* === 4K и выше === */
+@media (min-width: 2560px) {
+  .project-title-big {
+    font-size: 3vw;
+    line-height: 13vw;
+  }
+  .project-title-small {
+    font-size: 1.2vw;
+  }
+}
+
+/* === ДОПОЛНИТЕЛЬНЫЕ МЕДИАЗАПРОСЫ === */
+
+/* Мобильные устройства до 480px */
+@media (max-width: 480px) {
+  .project-title-big {
+    font-size: 10.5vw;
+    line-height: 12vw;
+    text-align: center;
+  }
+  .project-title-small {
+    font-size: 3.2vw;
+    text-align: center;
+  }
+}
+
+/* Планшеты 600px–1023px */
+@media (min-width: 600px) and (max-width: 1023px) {
+  .project-title-big {
+    font-size: 7vw;
+    line-height: 17vw;
+    text-align: left;
+  }
+  .project-title-small {
+    font-size: 2.4vw;
+    text-align: left;
+  }
+}
+
+/* Десктопы 1024px–1439px */
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .project-title-big {
+    font-size: 4.5vw;
+    line-height: 9vw;
+  }
+  .project-title-small {
+    font-size: 1.8vw;
+  }
+}
+
+/* Full HD 1440px–1920px */
+@media (min-width: 1440px) and (max-width: 1920px) {
+  .project-title-big {
+    font-size: 3.8vw;
+    line-height: 5vw;
+  }
+  .project-title-small {
+    font-size: 1.6vw;
+  }
+}
+
+/* 4K и выше */
+@media (min-width: 2560px) {
+  .project-title-big {
+    font-size: 3vw;
+    line-height: 4vw;
+  }
+  .project-title-small {
+    font-size: 1.2vw;
+  }
+}
+
+/* Scroll Snap Section */
+.step {
+  scroll-snap-align: start;
+}
+body, html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
 }
