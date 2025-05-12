@@ -4881,3 +4881,71 @@ html, body {
     font-size: 1.2vw;
   }
 }
+
+/* === ДОПОЛНИТЕЛЬНЫЕ МЕДИАЗАПРОСЫ === */
+
+/* Мобильные устройства до 480px */
+@media (max-width: 480px) {
+  .project-title-big {
+    font-size: 11vw;
+    line-height: 13vw;
+    text-align: center;
+  }
+  .project-title-small {
+    font-size: 3.3vw;
+    text-align: center;
+  }
+}
+
+/* Планшеты от 1024 до 1279px */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .project-title-big {
+    font-size: 4.5vw;
+    line-height: 6vw;
+  }
+  .project-title-small {
+    font-size: 1.8vw;
+  }
+}
+
+/* Широкие экраны от 1921 до 2559px */
+@media (min-width: 1921px) and (max-width: 2559px) {
+  .project-title-big {
+    font-size: 3vw;
+    line-height: 4vw;
+  }
+  .project-title-small {
+    font-size: 1.5vw;
+  }
+}
+
+/* Общее улучшение позиционирования */
+.project-step, .project-content, .project-title-container, .project-image-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5vh 5vw;
+  box-sizing: border-box;
+}
+
+.project-image-container picture {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  display: block;
+}
+
+.project-title-container h3 {
+  margin-bottom: 2rem;
+}
+
+/* Обеспечим плавность прокрутки */
+.step {
+  scroll-snap-align: start;
+}
+#scroll-container {
+  scroll-snap-type: y mandatory;
+  overflow-y: auto;
+  height: 100vh;
+}
