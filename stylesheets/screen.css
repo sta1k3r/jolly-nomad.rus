@@ -4952,3 +4952,16 @@ body, html {
     font-size: 1.2vw;
   }
 }
+
+
+/* === Адаптация блока "Обо мне" === */
+@media (max-width: 767px) {
+  .profile-section.flex.flex-wrap {
+    flex-direction: column;
+  }
+
+  .feature-list {
+    width: 100%;
+    margin-right: 0 !important;
+  }
+}
