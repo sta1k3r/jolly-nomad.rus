@@ -4850,6 +4850,7 @@ html, body {
     line-height: 1.8vw;
     text-align: left;
     line-height: 12.2vw;
+    margin-top: -16px;
   }
   .project-title-small {
     font-size: 1.4vw;
