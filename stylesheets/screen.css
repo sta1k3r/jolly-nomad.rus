@@ -690,7 +690,7 @@ p {
   .project-title-small {
     font-size: 2vw;
     text-align: right;
-    margin-top: 0.5vw;
+    margin-top: -0.5vw;
   }
 }
 /* line 159, ../sass/_typo.scss */
