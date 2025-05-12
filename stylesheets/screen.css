@@ -813,7 +813,7 @@ p {
 /* line 248, ../sass/_typo.scss */
 .text-right {
   text-align: right;
-  }
+}
 
 /* line 252, ../sass/_typo.scss */
 .underline {
@@ -4859,29 +4859,9 @@ html, body {
   }
 }
 
-/* === Full HD до 1920px === */
-@media (min-width: 1440px) and (max-width: 1920px) {
-  .project-title-big {
-    font-size: 3.8vw;
-    line-height: 15vw;
-    text-align: left;
-  }
-  .project-title-small {
-    font-size: 1.6vw;
-    text-align: right;
-  }
-}
 
-/* === 4K и выше === */
-@media (min-width: 2560px) {
-  .project-title-big {
-    font-size: 3vw;
-    line-height: 13vw;
-  }
-  .project-title-small {
-    font-size: 1.2vw;
-  }
-}
+
+
 
 /* === ДОПОЛНИТЕЛЬНЫЕ МЕДИАЗАПРОСЫ === */
 
@@ -4922,27 +4902,9 @@ html, body {
   }
 }
 
-/* Full HD 1440px–1920px */
-@media (min-width: 1440px) and (max-width: 1920px) {
-  .project-title-big {
-    font-size: 3.8vw;
-    line-height: 5vw;
-  }
-  .project-title-small {
-    font-size: 1.6vw;
-  }
-}
 
-/* 4K и выше */
-@media (min-width: 2560px) {
-  .project-title-big {
-    font-size: 3vw;
-    line-height: 4vw;
-  }
-  .project-title-small {
-    font-size: 1.2vw;
-  }
-}
+
+
 
 /* Scroll Snap Section */
 .step {
@@ -4951,4 +4913,42 @@ html, body {
 body, html {
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
+}
+
+
+/* === ДОПОЛНЕННЫЕ МЕДИАЗАПРОСЫ === */
+
+/* < 320px */
+@media (max-width: 319px) {
+  .project-title-big {
+    font-size: 11vw;
+    line-height: 13vw;
+    text-align: center;
+  }
+  .project-title-small {
+    font-size: 3.3vw;
+    text-align: center;
+  }
+}
+
+/* 1921px–2559px (2K) */
+@media (min-width: 1921px) and (max-width: 2559px) {
+  .project-title-big {
+    font-size: 3.5vw;
+    line-height: 11vw;
+  }
+  .project-title-small {
+    font-size: 1.5vw;
+  }
+}
+
+/* 2560px+ (4K+) */
+@media (min-width: 2560px) {
+  .project-title-big {
+    font-size: 3vw;
+    line-height: 10vw;
+  }
+  .project-title-small {
+    font-size: 1.2vw;
+  }
 }
