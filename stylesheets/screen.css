@@ -4946,7 +4946,7 @@ body, html {
 @media (min-width: 2560px) {
   .project-title-big {
     font-size: 3vw;
-    line-height: 10vw;
+    line-height: 13vw;
   }
   .project-title-small {
     font-size: 1.2vw;
