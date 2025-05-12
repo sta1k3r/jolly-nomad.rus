@@ -1,4 +1,3 @@
-
 /* RESET */
 * {
   margin: 0;
@@ -4817,4 +4816,68 @@ html, body {
 .projects-list {
   width: 100%;
   box-sizing: border-box;
+}
+
+/* === ДОПОЛНИТЕЛЬНЫЕ МЕДИАЗАПРОСЫ === */
+/* === ДО 360px === */
+@media (max-width: 360px) {
+  .project-title-big {
+    font-size: 12vw;
+    line-height: 14vw;
+    text-align: center;
+  }
+  .project-title-small {
+    font-size: 3.5vw;
+    text-align: center;
+  }
+}
+
+/* === 768px — типовой планшет === */
+@media (min-width: 600px) and (max-width: 979px) {
+  .project-title-big {
+    font-size: 7.5vw;
+    line-height: 9vw;
+    text-align: left;
+  }
+  .project-title-small {
+    font-size: 2.5vw;
+    text-align: left;
+  }
+}
+
+/* === Десктопы от 980px до Full HD === */
+@media (min-width: 980px) and (max-width: 1439px) {
+  .project-title-big {
+    font-size: 4.2vw;
+    line-height: 5.4vw;
+    text-align: left;
+  }
+  .project-title-small {
+    font-size: 1.8vw;
+    text-align: right;
+  }
+}
+
+/* === Full HD до 1920px === */
+@media (min-width: 1440px) and (max-width: 1920px) {
+  .project-title-big {
+    font-size: 3.8vw;
+    line-height: 4.8vw;
+    text-align: left;
+  }
+  .project-title-small {
+    font-size: 1.6vw;
+    text-align: right;
+  }
+}
+
+/* === 4K и выше === */
+@media (min-width: 2560px) {
+  .project-title-big {
+    font-size: 3vw;
+    line-height: 4vw;
+  }
+  .project-title-small {
+    font-size: 1.2vw;
+  }
 }
