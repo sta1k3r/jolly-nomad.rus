@@ -632,6 +632,28 @@ p {
   line-height: 4vw;
 }
 
+@media screen and (max-width: 360px) {
+  .project-title-big {
+    font-size: 18vw;
+    line-height: 19.5vw;
+    margin-top: -1.5vw;
+  }
+
+  .project-title-big .letter {
+    line-height: 18vw;
+  }
+
+  .project-title-small {
+    font-size: 4vw;
+    margin-top: 1.5vw;
+    text-align: center;
+  }
+
+  .project-title-small .letter {
+    line-height: 4.2vw;
+  }
+}
+
 /* Минимум 480px — малые смартфоны горизонтально или средние телефоны */
 @media screen and (min-width: 480px) {
   .project-title-big {
