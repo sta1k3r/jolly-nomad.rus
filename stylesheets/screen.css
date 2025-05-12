@@ -636,7 +636,7 @@ p {
 @media screen and (min-width: 480px) {
   .project-title-big {
     font-size: 12vw;
-    line-height: 14vw;
+    line-height: 16.48vw;
   }
 
   .project-title-big .letter {
@@ -657,7 +657,7 @@ p {
   .project-title-big {
     font-size: 9vw;
     margin-top: -0.7vw;
-    line-height: 11vw;
+    line-height: 16.2vw;
   }
 
   .project-title-big .letter {
@@ -720,7 +720,7 @@ p {
 @media screen and (min-width: 1920px) {
   .project-title-big {
     font-size: 4vw;
-    line-height: 6.5vw;
+    line-height: 12.1vw;
   }
 
   .project-title-big .letter {
@@ -2257,8 +2257,9 @@ header .menu span:nth-child(4) {
 @media screen and (max-width: 599px) {
   /* line 367, ../sass/_projects-list.scss */
   .projects-list .project-button .button {
-    padding: 12px 0;
-    width: 120px;
+    padding: 17px 1;
+    width: 156px;
+    height: 50px;
   }
 }
 /* line 391, ../sass/_projects-list.scss */
