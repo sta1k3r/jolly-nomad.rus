@@ -35,15 +35,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
   sections.forEach((section) => observer.observe(section));
 });
-
-document.querySelectorAll(".project-details-content").forEach((el) => {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        el.setAttribute("animate", "true");
-      }
-    });
-  }, { threshold: 0.6 });
-
-  observer.observe(el);
-});
