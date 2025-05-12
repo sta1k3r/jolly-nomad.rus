@@ -786,7 +786,7 @@ p {
 @media screen and (min-width: 600px) and (orientation: portrait) {
   /* line 223, ../sass/_typo.scss */
   .big-p {
-    font-size: 4vw;
+    font-size: 7vw;
   }
 }
 @media screen and (min-width: 1500px) {
