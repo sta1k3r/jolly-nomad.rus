@@ -2053,6 +2053,29 @@ header .menu span:nth-child(4) {
     width: 430px;
   }
 }
+.project-image-img {
+  width: 100%;
+  height: auto;
+  max-height: 50vh; /* ограничение по вертикали */
+  object-fit: cover;
+}
+@media screen and (max-width: 599px) {
+  .project-image-img {
+    height: auto; /* или фиксировать min-height если нужно */
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .project-image-img {
+    height: 30vw; /* или другое значение, подходящее под layout */
+  }
+}
+
+@media screen and (min-width: 980px) {
+  .project-image-img {
+    height: 15vw;
+  }
+}
 /* line 229, ../sass/_projects-list.scss */
 .projects-list .project-image-img {
   height: 56.8vw;
