@@ -648,8 +648,8 @@ p {
   font-weight: 600;
   display: block;
   overflow: hidden;
-  line-height: 16.1vw;
-  margin-top: -2.6vw;
+  line-height: 16.4vw;
+  margin-top: -2.4vw;
 }
 @media screen and (min-width: 980px) {
   /* line 118, ../sass/_typo.scss */
