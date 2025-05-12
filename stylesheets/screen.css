@@ -4876,7 +4876,7 @@ html, body {
 @media (min-width: 2560px) {
   .project-title-big {
     font-size: 3vw;
-    line-height: 15vw;
+    line-height: 13vw;
   }
   .project-title-small {
     font-size: 1.2vw;
@@ -4915,7 +4915,7 @@ html, body {
 @media (min-width: 1024px) and (max-width: 1439px) {
   .project-title-big {
     font-size: 4.5vw;
-    line-height: 6vw;
+    line-height: 9vw;
   }
   .project-title-small {
     font-size: 1.8vw;
