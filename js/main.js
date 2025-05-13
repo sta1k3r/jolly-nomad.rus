@@ -36,8 +36,8 @@ document.addEventListener("DOMContentLoaded", () => {
   sections.forEach((section) => observer.observe(section));
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-	const container = document;
-	spanWrapText(container, ".project-title-big");
-	spanWrapText(container, ".project-title-small");
+$('.slick-slider').on('init reInit afterChange', function() {
+	spanWrapText(document, '.project-title-big');
+	spanWrapText(document, '.project-title-small');
 });
+
