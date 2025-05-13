@@ -744,7 +744,7 @@ p {
 @media screen and (min-width: 1440px) {
   .project-title-big {
     font-size: 5vw;
-    line-height: 8vw;
+    line-height: 12.2vw;
   }
 
   .project-title-big .letter {
