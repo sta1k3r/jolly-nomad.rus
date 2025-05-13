@@ -35,3 +35,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   sections.forEach((section) => observer.observe(section));
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+	const container = document;
+	spanWrapText(container, ".project-title-big");
+	spanWrapText(container, ".project-title-small");
+});
